@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background: #158902;
+  width: 100vw;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.logo {
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+.nav-itens {
+  list-style: none;
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
+.nav-itens>li {
+  width: 200px;
+  /*border: #76BE6A solid 1px;*/
+  padding: 10px 5px 10px 5px;
+  font-size: 1em;
+  color: #F4F4F4;
+  font-family: Inter, sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav-itens>li:hover {
+  color: white;
+}
