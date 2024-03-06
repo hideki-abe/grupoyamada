@@ -3,10 +3,11 @@
   margin: 0;
   box-sizing: border-box;
   letter-spacing: 1px;
+  color: #F4F4F4;
 }
 
 footer {
-  background-color: #158902;
+  background-color: #0F6500;
   color: #F4F4F4;
   width: 100%;
   display: inline-block;
@@ -17,7 +18,7 @@ footer {
 
 #footer_content {
   display: grid;
-  grid-template-columns: repeat(4, 20%);
+  grid-template-columns: repeat(3, 30%);
   padding: 3rem 3.5rem;
 }
 
