@@ -2,11 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: #F4F4F4;
+  color: #f5f5f5;
 }
 
 nav {
-  background: #158902;
+  background: #0F6500;
   width: 100%;
   display: inline-block;
   justify-content: space-between;
@@ -15,15 +15,22 @@ nav {
 .contacts {
   width: 100%;
   text-align: end;
-}
-.contacts_content {
   margin-right: 1em;
   margin-top: 0.5em;
+}
+h3 {
+  display: inline;
+  margin-right: 1em;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 0.5em;
 }
 
 .logo {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .nav-itens {
@@ -44,5 +51,5 @@ nav {
 }
 
 .nav-itens>li:hover {
-  color: white;
+  color: #5fe690;
 }
