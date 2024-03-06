@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+footer {
+  background-color: #158902;
+  color: #F4F4F4;
+  width: 100vw;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+#footer_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem 3.5rem;
+}
+
+#location-map {
+  padding-top: 20px;
+  width: 100vw;
+  height: 500px;
+}
