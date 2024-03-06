@@ -19,8 +19,8 @@ footer {
   padding: 3rem 3.5rem;
 }
 
-#location-map {
+#location_map {
   padding-top: 20px;
   width: 100vw;
-  height: 500px;
+  height: 30vh;
 }
