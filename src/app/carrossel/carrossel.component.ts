@@ -20,14 +20,40 @@ interface carouselImage {
 export class CarrosselComponent implements OnInit{
 
   @Input() indicators = true;
+  @Input() controls = true;
+  @Input() autoSlide = false;
+  @Input() slideInterval = 3000;
   selectedIndex = 0;
 
   ngOnInit() {
-
+    if(this.autoSlide) {
+      this.autoSlideImages();
+    }
+  }
+  //changes slides in every 3 second
+  autoSlideImages() {
+    setInterval(() => {
+      this.onNextClick();
+    }, this.slideInterval)
   }
 
   selectImage(index: number) {
     this.selectedIndex = index;
+  }
+
+  onPrevClick() {
+    if(this.selectedIndex === 0) {
+      this.selectedIndex = this.images.length - 1;
+    } else {
+      this.selectedIndex--;
+    }
+  }
+  onNextClick() {
+    if(this.selectedIndex === this.images.length - 1) {
+      this.selectedIndex = 0;
+    } else {
+      this.selectedIndex++;
+    }
   }
 
   images:carouselImage[] = [
