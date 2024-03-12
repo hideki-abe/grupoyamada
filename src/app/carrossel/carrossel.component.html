@@ -1,29 +1,17 @@
-<body>
-  <div class="slider">
-    <input type="radio" name="radio-btn" id="radio1"/>
-    <input type="radio" name="radio-btn" id="radio2"/>
-    <input type="radio" name="radio-btn" id="radio3"/>
+<div *ngIf="images && images.length > 0" class="carousel-container">
+  <img *ngFor="let image of images; let i=index"
+       [src]="image.imageSrc"
+       [alt]="image.imageAlt"
+       [ngClass]="{'image-active': selectedIndex === i}"
+        class="fade"/>
+  <div *ngIf="indicators" class="carousel-dot-container">
+    <span *ngFor="let dot of images; let i=index"
+          class="dot"
+          [ngClass]="{'active': selectedIndex === i}"
+          (click)="selectImage(i)">
 
-    <div class="slide first">
-      <img src="assets/carrossel1.png"  alt="foto de corte a laser" width="1000px"/>
-    </div>
-    <div class="slide">
-      <img src="assets/carrossel1.png"  alt="foto de corte a laser" width="1000px"/>
-    </div>
-    <div class="slide">
-      <img src="assets/carrossel1.png"  alt="foto de corte a laser" width="1000px"/>
-    </div>
-
-    <div class="navigation-auto">
-      <div class="auto-btn1"></div>
-      <div class="auto-btn2"></div>
-      <div class="auto-btn3"></div>
-    </div>
+    </span>
   </div>
 
-  <div class="manual-navigation">
-    <label for="radio1" class="manual-btn"></label>
-    <label for="radio2" class="manual-btn"></label>
-    <label for="radio3" class="manual-btn"></label>
-  </div>
-</body>
+  <div class="btn-carousel btn-prev"></div>
+</div>
