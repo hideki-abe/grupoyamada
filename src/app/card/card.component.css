@@ -1,5 +1,7 @@
 .card {
   margin-top: 5em;
+  margin-bottom: 5em;
+  line-height: 1.5em;
 }
 
 h1 {
@@ -11,12 +13,24 @@ h1 {
 
 h2 {
   padding: 1em;
+  margin-top: 1em;
+  margin-left: 2em;
   width: 450px;
   color: #fff;
   font-weight: bold;
 }
 
-.title1 {
+ul {
+  margin-top: 1em;
+  list-style: square;
+  margin-left: 2em;
+}
+
+.content {
+  width: 500px;
+}
+
+.title1, .title3 {
   margin-left: 10%;
   margin-bottom: 20px;
 }
@@ -27,22 +41,71 @@ h2 {
   margin-bottom: 20px;
 }
 
+.content-list {
+  padding: 1em;
+  width: 450px;
+  color: #fff;
+  font-weight: bold;
+}
+
 .box1 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
   background: #76BE6A;
   width: 90%;
   margin-left: 10%;
   margin-bottom: 5em;
-  height: 400px;
+  height: 300px;
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
 .box2 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
   background: #76BE6A;
   width: 90%;
   margin-right: 10%;
-  margin-bottom: 2em;
-  height: 400px;
+  margin-bottom: 5em;
+  height: 300px;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 }
+
+.box3 {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background: #76BE6A;
+  width: 90%;
+  margin-left: 10%;
+  margin-bottom: 5em;
+  height: 300px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+.bg-1{
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/oxicorte.jpeg?alt=media&token=4f60a525-d42d-42fd-8562-5d60d0b87dd5");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 900px;
+  min-width: 600px;
+}
+
+.bg-2{
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/WhatsApp%20Image%202024-02-29%20at%2016.28.08%20(6).jpeg?alt=media&token=84cb2a31-fa0a-4806-8656-963e027d8ed7");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.bg-3{
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/WhatsApp%20Image%202024-02-29%20at%2016.30.40%20(4).jpeg?alt=media&token=ee89c88f-97c0-41df-ae47-691361c9f860 ");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
