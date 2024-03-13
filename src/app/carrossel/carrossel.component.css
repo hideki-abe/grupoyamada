@@ -14,7 +14,7 @@
 
 .carousel-container img.image-active {
   display: block;
-  width: 800px;
+  width: auto;
   height: 300px;
 }
 
