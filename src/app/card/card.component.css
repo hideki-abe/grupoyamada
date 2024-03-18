@@ -2,11 +2,11 @@
   margin-top: 5em;
   margin-bottom: 5em;
   line-height: 1.5em;
+  font-family: Inter, serif;
 }
 
 h1 {
   font-size: 32px;
-  font-family: Inter, serif;
   font-weight: bold;
   color: #0F6500;
 }
@@ -22,6 +22,7 @@ h2 {
 }
 
 ul {
+  font-size: 24px;
   margin-top: 1em;
   list-style: square;
   margin-left: 40px;
@@ -51,7 +52,6 @@ i {
   padding: 1em;
   width: 450px;
   color: #fff;
-  font-weight: bold;
 }
 
 .box1 {
@@ -75,8 +75,8 @@ i {
   margin-right: 10%;
   margin-bottom: 5em;
   height: 350px;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
@@ -88,8 +88,8 @@ i {
   margin-left: 10%;
   margin-bottom: 5em;
   height: 300px;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
 }
 
@@ -139,6 +139,11 @@ i {
 .btn2 {
   margin-top: 13px;
   border-bottom-right-radius: 10px
+}
+
+.btn3 {
+  margin-top: 122px;
+  border-bottom-left-radius: 10px
 }
 
 .btn:hover{
