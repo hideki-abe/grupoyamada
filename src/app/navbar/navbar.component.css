@@ -56,6 +56,10 @@ h3 {
   font-weight: normal;
 }
 
-.nav-itens>li:hover {
-  color: #5fe690;
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #029e3b;
 }
