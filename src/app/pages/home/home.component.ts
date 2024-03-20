@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {CarrosselComponent} from "../carrossel/carrossel.component";
-import {CardComponent} from "../card/card.component";
+import {CardComponent} from "../../components/card/card.component";
+import {CarrosselComponent} from "../../components/carrossel/carrossel.component";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,9 @@ import {CardComponent} from "../card/card.component";
   imports: [
     NgOptimizedImage,
     CarrosselComponent,
-    CardComponent
+    CardComponent,
+    CardComponent,
+    CarrosselComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

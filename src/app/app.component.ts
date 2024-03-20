@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NavbarComponent} from "./navbar/navbar.component";
-import {FooterComponent} from "./footer/footer.component";
-import {WhatsappComponent} from "./whatsapp/whatsapp.component";
+import {NavbarComponent} from "./components/navbar/navbar.component";
+import {FooterComponent} from "./components/footer/footer.component";
+import {WhatsappComponent} from "./components/whatsapp/whatsapp.component";
 
 @Component({
   selector: 'app-root',
