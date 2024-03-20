@@ -1,0 +1,47 @@
+.produtos {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}
+
+.card {
+  margin: 15px 15px 15px 15px;
+  width: 250px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.front, .inside, .back {
+  padding: 10px;
+}
+
+.front {
+  text-align: center;
+}
+
+.front img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.inside {
+  display: block;
+  height: auto;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.inside p {
+  margin: 0;
+}
+
+.back {
+  text-align: center;
+}
+
+.back img {
+  max-width: 60px;
+}
