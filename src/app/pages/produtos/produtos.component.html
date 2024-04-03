@@ -1,16 +1,15 @@
-<div class="sidebar">
-  <ul>
-    <li><a href="#" onclick="selectCard(1)">Card 1</a></li>
-    <li><a href="#" onclick="selectCard(2)">Card 2</a></li>
-    <!-- Adicione mais opções de menu conforme necessário -->
-  </ul>
-</div>
-
-<div class="card-container">
-  <app-produto/>
-  <app-produto/>
-  <app-produto/>
-  <app-produto/>
-  <app-produto/>
-  <!-- Adicione mais cards aqui, se necessário -->
+<div class="content">
+  <div class="sidebar">
+    <ul>
+      <li><a href="#" onclick="selectCard(1)">Card 1</a></li>
+      <li><a href="#" onclick="selectCard(2)">Card 2</a></li>
+      <!-- Adicione mais opções de menu conforme necessário -->
+    </ul>
+  </div>
+  <div class="card-container">
+    <div *ngFor="let produto of produtos" class="card">
+      <app-produto [produto]="produto"/>
+      <!-- Adicione mais cards aqui, se necessário -->
+    </div>
+  </div>
 </div>

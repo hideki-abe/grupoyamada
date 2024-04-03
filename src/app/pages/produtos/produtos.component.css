@@ -1,4 +1,9 @@
+.content {
+  display: block;
+}
+
 .sidebar {
+  display: block;
   width: 200px;
   height: 100vh;
   background-color: #76BE6A;
@@ -23,12 +28,16 @@
   border-color: #007bff;
 }
 
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 200px;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: start;
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-bottom: 200px;
+}
+
+.card {
+  margin-left: 20px;
 }
