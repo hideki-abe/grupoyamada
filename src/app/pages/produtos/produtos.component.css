@@ -1,4 +1,9 @@
+.content {
+  display: block;
+}
+
 .sidebar {
+  display: block;
   width: 200px;
   height: 100vh;
   background-color: #76BE6A;
@@ -10,12 +15,37 @@
 }
 
 .sidebar ul {
-  list-style-type: none;
+  text-align: center;
+  list-style-type: circle;
   padding: 0;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 150px;
+  height: 1px;
+  border-width: 0;
+  color: #1e1e1e;
+  background-color: #619c5b;
 }
 
 .sidebar li {
   padding: 10px;
+}
+
+.sidebar a {
+    color: #dce1e1;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    transition: transform 1s;
+  }
+
+sidebar li:hover {
+  transform: scale(2);
+  color: #0F6500;
 }
 
 /* Estilos específicos do card e sua seleção */
@@ -23,12 +53,16 @@
   border-color: #007bff;
 }
 
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 200px;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 20px;
+  align-items: flex-start;
+  justify-content: start;
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-bottom: 200px;
+}
+
+.card {
+  margin-left: 20px;
 }
