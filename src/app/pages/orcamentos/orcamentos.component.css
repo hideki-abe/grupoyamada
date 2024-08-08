@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #dff0d8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d0e9c6;
+  border-radius: 8px;
+}
+h1 {
+  color: #3c763d;
+}
+h2 {
+  color: #5bc0de;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #d0e9c6;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+button {
+  background-color: #3c763d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+button:hover {
+  background-color: #2b542c;
+}
+.contact-info {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.contact-info p {
+  margin: 5px 0;
+}
