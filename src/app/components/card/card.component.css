@@ -2,7 +2,6 @@
   margin-top: 5em;
   margin-bottom: 5em;
   line-height: 1.5em;
-  font-family: Inter, serif;
 }
 
 h1 {
@@ -11,16 +10,17 @@ h1 {
 }
 
 h2 {
+  font-size: 16px;
   margin-top: 30px;
   margin-left: 40px;
-  width: 550px;
+  width: 800px;
   text-align: left;
   color: #fff;
   font-weight: normal;
 }
 
 ul {
-  font-size: 24px;
+  font-size: 16px;
   margin-top: 1em;
   list-style: square;
   margin-left: 40px;
@@ -59,7 +59,7 @@ i {
   width: 90%;
   margin-left: 10%;
   margin-bottom: 5em;
-  height: 300px;
+  height: 350px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
@@ -120,7 +120,6 @@ i {
   background-color: #ffffff;
   padding: 20px 35%;
   border: none;
-  box-shadow: rgb(97, 97, 97) 5px 3px 10px -2px;
   transition : 1000ms;
   display: flex;
   flex-direction: row;
@@ -130,17 +129,17 @@ i {
 }
 
 .btn1 {
-  margin-top: 78px;
+  margin-top: 177px;
   border-bottom-left-radius: 10px;
 }
 
 .btn2 {
-  margin-top: 13px;
+  margin-top: 15px;
   border-bottom-right-radius: 10px
 }
 
 .btn3 {
-  margin-top: 126px;
+  margin-top: 150px;
   border-bottom-left-radius: 10px
 }
 

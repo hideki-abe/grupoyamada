@@ -47,13 +47,12 @@ h3 {
 }
 
 .nav-itens>li {
-  font-family: Inter, sans-serif;
   width: 170px;
   /*border: #76BE6A solid 1px;*/
   padding: 10px 5px 10px 5px;
   font-size: 1em;
   text-align: center;
-  font-weight: normal;
+  font-weight: lighter;
 }
 
 a {
