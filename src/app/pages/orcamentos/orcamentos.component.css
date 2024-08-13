@@ -14,12 +14,18 @@ body {
 }
 h1 {
   color: #3c763d;
+  margin-bottom: 1em;
 }
 h2 {
   color: #5bc0de;
+  margin-top: 0.5em;
 }
+
+b {
+  margin-top: 10px;
+}
+
 label {
-  display: block;
   margin-top: 10px;
   font-weight: bold;
 }
@@ -35,11 +41,16 @@ textarea {
   height: 100px;
   resize: vertical;
 }
+
+form {
+  display: grid;
+}
+
 button {
   background-color: #3c763d;
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
@@ -48,10 +59,8 @@ button {
 button:hover {
   background-color: #2b542c;
 }
-.contact-info {
-  margin-top: 20px;
-  font-size: 14px;
-}
-.contact-info p {
-  margin: 5px 0;
+
+.mensagem p {
+  margin-top: 1em;
+  text-align: center;
 }

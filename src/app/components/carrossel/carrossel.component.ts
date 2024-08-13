@@ -22,7 +22,7 @@ export class CarrosselComponent implements OnInit{
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
-  @Input() slideInterval = 3000;
+  @Input() slideInterval = 8000;
   selectedIndex = 0;
 
   ngOnInit() {
@@ -59,7 +59,7 @@ export class CarrosselComponent implements OnInit{
   images:carouselImage[] = [
     {
       imageSrc:
-        'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/WhatsApp%20Image%202024-02-29%20at%2016.31.53%20(1).jpeg?alt=media&token=61ebf68f-e1f3-47cb-bcf3-f0ce278c0b7c',
+        '/assets/carrossel1.png',
       imageAlt: 'nature1',
     },
     {

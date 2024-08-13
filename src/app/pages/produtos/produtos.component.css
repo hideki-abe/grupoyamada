@@ -59,10 +59,7 @@ sidebar li:hover {
   align-items: flex-start;
   justify-content: start;
   margin-top: 50px;
-  margin-left: 250px;
+  margin-left: 100px;
   margin-bottom: 200px;
 }
 
-.card {
-  margin-left: 20px;
-}
