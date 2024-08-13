@@ -1,7 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {Router, RouterLink} from "@angular/router";
 
 interface carouselImage {
+  link: string;
   imageSrc: string;
   imageAlt: string;
 }
@@ -12,7 +14,8 @@ interface carouselImage {
   imports: [
     NgClass,
     NgIf,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './carrossel.component.html',
   styleUrl: './carrossel.component.css'
@@ -29,6 +32,9 @@ export class CarrosselComponent implements OnInit{
     if(this.autoSlide) {
       this.autoSlideImages();
     }
+  }
+
+  constructor(private router:Router) {
   }
   //changes slides in every 3 second
   autoSlideImages() {
@@ -61,7 +67,12 @@ export class CarrosselComponent implements OnInit{
       imageSrc:
         '/assets/carrossel1.png',
       imageAlt: 'nature1',
+      link: 'orcamentos'
     }
   ]
 
+  onClick(link: string) {
+    // @ts-ignore
+    this.router.navigate([link]);
+  }
 }

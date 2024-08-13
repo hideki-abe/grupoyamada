@@ -2,6 +2,7 @@
   <img *ngFor="let image of images; let i=index"
        [src]="image.imageSrc"
        [alt]="image.imageAlt"
+       (click)="onClick(image.link)"
        [ngClass]="{'image-active': selectedIndex === i}"
         class="fade"/>
   <div *ngIf="indicators" class="carousel-dot-container">
@@ -9,7 +10,6 @@
           class="dot"
           [ngClass]="{'active': selectedIndex === i}"
           (click)="selectImage(i)">
-
     </span>
   </div>
 
