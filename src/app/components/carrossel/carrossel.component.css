@@ -9,6 +9,7 @@
 
 .carousel-container img {
   display: none;
+  cursor: pointer;
 }
 
 .carousel-container img.image-active {
