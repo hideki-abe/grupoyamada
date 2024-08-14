@@ -2,3 +2,75 @@ body {
   width: 100%;
   height: auto;
 }
+.container {
+  margin: auto;
+  width: 1200px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 1.5em;
+}
+
+.intro {
+  width: 100%;
+}
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #0F6500;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+iframe {
+  align-self: center;
+}
+
+.square {
+  width: 300px; /* Tamanho do quadrado */
+  height: 60px; /* Tamanho do quadrado */
+  background-color: #5bc0de; /* Cor de fundo do quadrado */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.square:hover {
+  width: 400px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid #5bc0de; /* Cor do triângulo */
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  position: absolute;
+  right: -30px; /* Alinha o triângulo com o lado direito do quadrado */
+  top: 0;
+}
+
+.text {
+  color: #1e1e1e; /* Cor do texto */
+  font-size: 30px; /* Tamanho da fonte do texto */
+  font-family: Arial, sans-serif; /* Fonte do texto */
+  font-weight: bold;
+  position: relative;
+  margin-left: 30px;
+}
+
