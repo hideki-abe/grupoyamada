@@ -6,7 +6,7 @@
 
 h1 {
   font-weight: bold;
-  color: #0F6500;
+  color: #A9A9A9;
 }
 
 h2 {
@@ -15,7 +15,7 @@ h2 {
   margin-left: 40px;
   width: 800px;
   text-align: left;
-  color: #fff;
+  color: #1e1e1e;
   font-weight: normal;
 }
 
@@ -24,6 +24,10 @@ ul {
   margin-top: 1em;
   list-style: square;
   margin-left: 40px;
+}
+
+ul li {
+  color: #1e1e1e;
 }
 
 i {
@@ -55,40 +59,40 @@ i {
 .box1 {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  background: #76BE6A;
+  background: #FFFFFF;
   width: 90%;
   margin-left: 10%;
   margin-bottom: 5em;
   height: 350px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .box2 {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  background: #76BE6A;
+  background: #FFFFFF;
   width: 90%;
   margin-right: 10%;
   margin-bottom: 5em;
   height: 350px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .box3 {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  background: #76BE6A;
+  background: #FFFFFF;
   width: 90%;
   margin-left: 10%;
   margin-bottom: 5em;
   height: 300px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
 .bg-1{
@@ -116,8 +120,8 @@ i {
 .btn{
   font-weight: 600;
   font-size: 24px;
-  color: #126305;
-  background-color: #ffffff;
+  color: #1e1e1e;
+  background-color: #ADD8E6;
   padding: 20px 35%;
   border: none;
   transition : 1000ms;

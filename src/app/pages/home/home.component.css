@@ -49,7 +49,7 @@ iframe {
 .square {
   width: 250px; /* Tamanho do quadrado */
   height: 60px; /* Tamanho do quadrado */
-  background-color: #3c763d; /* Cor de fundo do quadrado */
+  background-color: #FFA500; /* Cor de fundo do quadrado */
   display: flex;
   justify-content: start;
   align-items: center;
@@ -61,7 +61,7 @@ iframe {
 .square1 {
   width: 100%; /* Tamanho do quadrado */
   height: 300px; /* Tamanho do quadrado */
-  background-color: #3c763d; /* Cor de fundo do quadrado */
+  background-color: #76BE6A; /* Cor de fundo do quadrado */
   padding-left: 20px;
   display: flex;
   justify-content: start;
@@ -73,7 +73,7 @@ iframe {
   width: 0;
   height: 0;
   rotate: 180deg;
-  border-left: 100px solid #3c763d; /* Cor do triângulo */
+  border-left: 100px solid #76BE6A; /* Cor do triângulo */
   border-top: 300px solid transparent;
   position: absolute;
   right: 1220px; /* Alinha o triângulo com o lado direito do quadrado */
@@ -83,7 +83,7 @@ iframe {
 .triangle1 {
   width: 0;
   height: 0;
-  border-left: 100px solid #3c763d; /* Cor do triângulo */
+  border-left: 100px solid #76BE6A; /* Cor do triângulo */
   border-top: 300px solid transparent;
   border-bottom: 0px solid transparent;
   position: absolute;
@@ -101,7 +101,7 @@ iframe {
 .triangle {
   width: 0;
   height: 0;
-  border-left: 30px solid #3c763d; /* Cor do triângulo */
+  border-left: 30px solid #FFA500; /* Cor do triângulo */
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
   position: absolute;
@@ -110,7 +110,7 @@ iframe {
 }
 
 .text {
-  color: #F4F4F4; /* Cor do texto */
+  color: #ffffff; /* Cor do texto */
   font-size: 30px; /* Tamanho da fonte do texto */
   font-family: Arial, sans-serif; /* Fonte do texto */
   font-weight: bold;

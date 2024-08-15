@@ -13,11 +13,11 @@ body {
   border-radius: 8px;
 }
 h1 {
-  color: #3c763d;
+  color: #FFA500;
   margin-bottom: 1em;
 }
 h2 {
-  color: #5bc0de;
+  color: #A9A9A9;
   margin-top: 0.5em;
 }
 
@@ -47,7 +47,7 @@ form {
 }
 
 button {
-  background-color: #3c763d;
+  background-color: #FFA500;
   color: #ffffff;
   border: none;
   padding: 20px;
@@ -57,7 +57,7 @@ button {
   margin-top: 20px;
 }
 button:hover {
-  background-color: #2b542c;
+  background-color: #1e1e1e;
 }
 
 .mensagem p {

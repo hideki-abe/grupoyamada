@@ -1,79 +1,15 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
 .container {
   width: 80%;
   margin: auto;
   padding: 20px;
   line-height: 1.2em;
+  color: #1e1e1e;
+  letter-spacing: 1px;
 }
-
-header {
-  background-color: #3c763d;
-  color: #ffffff;
-  padding: 10px 0;
-}
-
-header h1 {
-  text-align: center;
-  margin: 0;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 10px;
-}
-
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-main {
-  padding: 20px 0;
-}
-
 section {
   margin-bottom: 20px;
 }
 
 h2 {
-  color: #3c763d;
-}
-
-.team {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.team-member {
-  text-align: center;
-  width: 30%;
-  margin: 10px;
-}
-
-.team-member img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-}
-
-footer {
-  background-color: #3c763d;
-  color: #ffffff;
-  text-align: center;
-  padding: 10px 0;
+  color: #0F6500;
 }
