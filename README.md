@@ -1,27 +1,29 @@
-# Grupoyamada
+Paleta de Cores para um Site de Vendas
+Cor Principal:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
+Verde Principal: #0F6500 (Ideal para botões de ação e destaques)
+Cores Secundárias e Complementares:
 
-## Development server
+Verde Suave: #4A9A2A (Para elementos secundários e destaques menores, como ícones e gráficos)
+Verde Musgo: #6D8E3F (Para áreas de navegação e fundos de seções, oferecendo um contraste sutil)
+Cores Neutras:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Cinza Claro: #F0F0F0 (Para o fundo geral do site, garantindo uma boa legibilidade e contraste com o verde)
+Cinza Médio: #C0C0C0 (Para bordas, separadores e elementos de interface)
+Branco: #FFFFFF (Para áreas de destaque, como cartões de produtos e seções de informações)
+Cores de Acento e Destaque:
 
-## Code scaffolding
+Amarelo Dourado: #F2C300 (Para botões de chamada para ação e ofertas especiais, criando um contraste chamativo e convidativo)
+Azul Escuro: #003366 (Para links e elementos que precisam se destacar, como cabeçalhos ou barras de navegação)
+Cores de Feedback e Alertas:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Vermelho: #D9534F (Para mensagens de erro e alertas)
+Verde Claro: #5BC0DE (Para mensagens de sucesso e confirmações)
+Exemplo de Aplicação:
+Fundo Principal: Cinza Claro (#F0F0F0)
+Cabeçalhos e Rodapés: Verde Musgo (#6D8E3F)
+Botões de Ação e Ofertas: Amarelo Dourado (#F2C300)
+Links e Destaques: Azul Escuro (#003366)
+Mensagens de Erro e Alertas: Vermelho (#D9534F)
+Mensagens de Sucesso e Confirmações: Verde Claro (#5BC0DE)
+Essa combinação deve criar um site atraente e funcional, garantindo uma boa experiência para os usuários e destacando os produtos de forma eficaz. Se você precisar de mais ajuda com a aplicação prática dessas cores ou tiver outras necessidades específicas, sinta-se à vontade para perguntar!
