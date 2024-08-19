@@ -1,5 +1,7 @@
 .content {
   display: block;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .sidebar {
@@ -58,8 +60,6 @@ sidebar li:hover {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: start;
-  margin-top: 50px;
   margin-left: 100px;
-  margin-bottom: 200px;
 }
 
