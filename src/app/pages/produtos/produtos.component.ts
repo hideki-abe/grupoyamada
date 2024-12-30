@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {ProdutoComponent} from "../../components/produto/produto.component";
-import {CardComponent} from "../../components/card/card.component";
 import {Produto} from "../../interfaces/produto";
 import {NgForOf} from "@angular/common";
 
@@ -9,7 +8,6 @@ import {NgForOf} from "@angular/common";
   standalone: true,
   imports: [
     ProdutoComponent,
-    CardComponent,
     NgForOf
   ],
   templateUrl: './produtos.component.html',

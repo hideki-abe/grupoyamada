@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
-import {CardComponent} from "../../components/card/card.component";
 import {CarrosselComponent} from "../../components/carrossel/carrossel.component";
 import {CardQualidadeComponent} from "../../components/card-qualidade/card-qualidade.component";
+import {PreviaProdutosComponent} from "../../components/previa-produtos/previa-produtos.component";
 
 @Component({
   selector: 'app-home',
@@ -10,10 +10,9 @@ import {CardQualidadeComponent} from "../../components/card-qualidade/card-quali
   imports: [
     NgOptimizedImage,
     CarrosselComponent,
-    CardComponent,
-    CardComponent,
     CarrosselComponent,
-    CardQualidadeComponent
+    CardQualidadeComponent,
+    PreviaProdutosComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
