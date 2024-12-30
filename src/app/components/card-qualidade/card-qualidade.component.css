@@ -5,6 +5,8 @@
   justify-content: center;
   background: #EFEEEA;
   color: #3E3E34;
+  line-height: 1.3em;
+  font-weight: 100;
 }
 
 ul {
@@ -15,7 +17,7 @@ ul {
 
 .list {
   width: 1200px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 li {
