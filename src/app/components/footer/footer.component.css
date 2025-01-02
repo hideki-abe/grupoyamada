@@ -3,33 +3,43 @@
   margin: 0;
   box-sizing: border-box;
   letter-spacing: 1px;
-  color: #F4F4F4;
+  background: #FAFAFA;
 }
 
 footer {
-  background-color:  #68B04D;
-  color: #F4F4F4;
+  color: #3E3E34;
   width: 100%;
   display: inline-block;
-  justify-content: space-between;
+  justify-content: center;
   position: static;
   bottom: 0;
+  text-align: center;
+}
+
+.line {
+  display: inline-block;
+  color: #0F6500;
+  width: 1383px;
 }
 
 #footer_content {
-  display: grid;
-  grid-template-columns: repeat(3, 30%);
-  padding: 3rem 3.5rem;
+  display: flex;
+  width: 1393px;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
 }
 
 #location_map {
   padding-top: 20px;
-  width: 100%;
+  width: 1383px;
   height: 40vh;
 }
 
-img {
-  display: inline-block;
+.logo {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
 }
 
 .endereco_img {
