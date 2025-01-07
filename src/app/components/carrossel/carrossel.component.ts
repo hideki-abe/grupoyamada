@@ -22,57 +22,32 @@ interface carouselImage {
 })
 export class CarrosselComponent implements OnInit{
 
-  @Input() indicators = true;
-  @Input() controls = true;
-  @Input() autoSlide = false;
-  @Input() slideInterval = 8000;
-  selectedIndex = 0;
+  images: string[] = [
+    'https://via.placeholder.com/150',
+    'https://via.placeholder.com/150',
+    'https://via.placeholder.com/150',
+    'https://via.placeholder.com/150',
+    'https://via.placeholder.com/150'
+  ];
 
-  ngOnInit() {
-    if(this.autoSlide) {
-      this.autoSlideImages();
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  // Função chamada no mouseenter para pausar a animação
+  onMouseEnter(): void {
+    const carrosselInner = document.querySelector('.carrossel-inner') as HTMLElement;
+    if (carrosselInner) {
+      carrosselInner.style.animationPlayState = 'paused';
     }
   }
 
-  constructor(private router:Router) {
-  }
-  //changes slides in every 3 second
-  autoSlideImages() {
-    setInterval(() => {
-      this.onNextClick();
-    }, this.slideInterval)
-  }
-
-  selectImage(index: number) {
-    this.selectedIndex = index;
-  }
-
-  onPrevClick() {
-    if(this.selectedIndex === 0) {
-      this.selectedIndex = this.images.length - 1;
-    } else {
-      this.selectedIndex--;
+  // Função chamada no mouseleave para retomar a animação
+  onMouseLeave(): void {
+    const carrosselInner = document.querySelector('.carrossel-inner') as HTMLElement;
+    if (carrosselInner) {
+      carrosselInner.style.animationPlayState = 'running';
     }
-  }
-  onNextClick() {
-    if(this.selectedIndex === this.images.length - 1) {
-      this.selectedIndex = 0;
-    } else {
-      this.selectedIndex++;
-    }
-  }
-
-  images:carouselImage[] = [
-    {
-      imageSrc:
-        '/assets/carrossel1.png',
-      imageAlt: 'nature1',
-      link: 'orcamentos'
-    }
-  ]
-
-  onClick(link: string) {
-    // @ts-ignore
-    this.router.navigate([link]);
   }
 }

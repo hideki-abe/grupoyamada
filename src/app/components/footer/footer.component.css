@@ -10,7 +10,6 @@ footer {
   color: #3E3E34;
   width: 100%;
   display: inline-block;
-  justify-content: center;
   position: static;
   bottom: 0;
   text-align: center;
@@ -18,16 +17,23 @@ footer {
 
 .line {
   display: inline-block;
+  background: #0F6500;
   color: #0F6500;
   width: 1383px;
+  height: 1px;
+  margin-bottom: 50px;
 }
 
 #footer_content {
   display: flex;
-  width: 1393px;
-  align-content: center;
-  align-self: center;
+  width: 100%;
   justify-content: center;
+  text-align: center;
+}
+
+.text {
+  display: inline-flex;
+  width: 1383px;
 }
 
 #location_map {
@@ -36,10 +42,41 @@ footer {
   height: 40vh;
 }
 
+.contato, .logo, .endereco {
+  margin-top: 50px;
+  width: 461px;
+  height: 300px;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contato {
+  text-align: end;
+}
+
+.contato p{
+  line-height: 2.5em;
+}
+
 .logo {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
+  padding: 50px;
+  align-content: center;
+}
+
+.endereco {
+  text-align: start;
+  line-height: 2.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #3E3E34;
 }
 
 .endereco_img {

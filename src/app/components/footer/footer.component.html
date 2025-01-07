@@ -1,6 +1,5 @@
 <footer class="footer">
   <div class="line">
-    <hr/>
   </div>
   <div class="location">
     <iframe id="location_map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.1907542599592!2d-49.314980224851325!3d-16.66733523410229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef447f6226675%3A0xebb2f385bb19f01d!2sA%C3%A7os%20Yamada!5e0!3m2!1spt-BR!2sbr!4v1709725776431!5m2!1spt-BR!2sbr"
@@ -11,19 +10,27 @@
     </iframe>
   </div>
   <div id="footer_content">
-    <div class="contato">
-      <div>Contato</div>
-      <ul>
-        <li>(62)9 8453-0481</li>
-        <li>(62) 3271-2614</li>
-      </ul>
-    </div>
-    <div class="logo">
-      <img ngSrc="assets/logomarca.svg" alt="logo" height="78" width="150"/>
-    </div>
-    <div class="endereco">
-      <div>
-        R. Salburgo, Nº 119 - Esplanada dos Anicuns, Goiânia - GO, 74433-160
+    <div class="text">
+      <div class="endereco">
+        <ul>
+          <li [routerLinkActive]="'active'"><a routerLink="home">Home</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="sobre">Sobre nós</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="servicos">Serviços</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="produtos">Produtos</a></li>
+          <li [routerLinkActive]="'active'"><a routerLink="orcamentos">Orçamentos</a></li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img ngSrc="assets/logomarca.svg" alt="logo" height="78" width="150"/>
+      </div>
+      <div class="contato">
+        <p class="title">Entre em contato:</p>
+        <p>
+          <b>Aços Yamada:</b> 62 99935-5551<br/>
+          <b>Metalúrgica:</b> 62 99635-0607<br/>
+          <b>Yamada Inox:</b> 62 98449-1733<br/>
+          <b>Financeiro:</b> 62 99938-8889
+        </p>
       </div>
     </div>
   </div>
