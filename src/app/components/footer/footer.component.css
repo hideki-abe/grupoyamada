@@ -43,7 +43,6 @@ footer {
 }
 
 .contato, .logo, .endereco {
-  margin-top: 50px;
   width: 461px;
   height: 300px;
 }
@@ -54,6 +53,7 @@ footer {
 }
 
 .contato {
+  margin-top: 50px;
   text-align: end;
 }
 
@@ -62,11 +62,11 @@ footer {
 }
 
 .logo {
-  padding: 50px;
   align-content: center;
 }
 
 .endereco {
+  margin-top: 50px;
   text-align: start;
   line-height: 2.5em;
 }
