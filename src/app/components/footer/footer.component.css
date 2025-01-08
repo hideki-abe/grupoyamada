@@ -42,7 +42,7 @@ footer {
   height: 40vh;
 }
 
-.contato, .logo, .endereco {
+.contato, .logo, .links {
   width: 461px;
   height: 300px;
 }
@@ -55,6 +55,7 @@ footer {
 .contato {
   margin-top: 50px;
   text-align: end;
+  font-size: 18px;
 }
 
 .contato p{
@@ -65,10 +66,20 @@ footer {
   align-content: center;
 }
 
-.endereco {
+.links {
   margin-top: 50px;
   text-align: start;
   line-height: 2.5em;
+}
+
+.icon-wpp{
+  align-items: center;
+  margin-right: 10px;
+}
+.icon-ig{
+  padding: 2.5px;
+  align-items: center;
+  margin-right: 10px;
 }
 
 a {
@@ -79,6 +90,6 @@ a:visited {
   color: #3E3E34;
 }
 
-.endereco_img {
+.links_img {
   display: inline;
 }

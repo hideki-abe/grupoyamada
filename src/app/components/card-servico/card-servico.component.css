@@ -1,0 +1,33 @@
+.container {
+  height: 600px;
+  width: 100%;
+  margin-top: 50px;
+  display: inline-flex;
+}
+
+.card {
+  width: 360px;
+  height: 480px;
+  margin: 20px;
+}
+
+video {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  color: #dc0000;
+}
+
+.text {
+  width: 360px;
+  height: 80px;
+  background: #3E3E34;
+  padding-top: 10px;
+  margin-top: -3px;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg_video {
+
+}
