@@ -40,6 +40,12 @@ p {
   color: #1E1E1E;
 }
 
+.mais {
+  display: inline-flex;
+  width: 100%;
+  justify-content: end;
+}
+
 .btn {
   text-decoration: none;
   font-family: Montserrat, sans-serif;
@@ -50,6 +56,24 @@ p {
   margin-top: 30px;
   background: #68B04D;
   font-size: 20px;
+  align-self: end;
+}
+
+.btn2 {
+  font-family: Montserrat, sans-serif;
+  color: #3E3E34;
+  border: none;
+  width: 175px;
+  height: 30px;
+  margin-top: 30px;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: end;
+}
+
+.btn2:hover {
+  text-decoration: underline;
 }
 
 .btn:hover {

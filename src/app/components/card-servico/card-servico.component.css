@@ -1,7 +1,15 @@
-.container {
-  height: 600px;
-  width: 100%;
+.title1 {
   margin-top: 50px;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.container {
+  height: 550px;
+  width: 100%;
+  margin-top: 20px;
   display: inline-flex;
 }
 
@@ -34,6 +42,14 @@ video {
   transition: background .3s;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+}
+
 .text:hover {
   background: #1E1E1E;
   cursor: pointer;
@@ -41,4 +57,19 @@ video {
 
 .text p {
   margin: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  font-family: Montserrat, sans-serif;
+  color: #FFFFFF;
+  border: none;
+  width: 317px;
+  height: 53px;
+  background: #68B04D;
+  font-size: 20px;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
