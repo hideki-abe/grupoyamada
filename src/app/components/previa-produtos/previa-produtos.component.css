@@ -51,3 +51,7 @@ p {
   background: #68B04D;
   font-size: 20px;
 }
+
+.btn:hover {
+  cursor: pointer;
+}
