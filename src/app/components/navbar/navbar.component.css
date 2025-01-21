@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: Montserrat, sans-serif;
   font-weight: 100;
+  color: white;
 }
 
 nav {
@@ -45,6 +46,7 @@ h3 {
   height: 30px;
   width: 30px;
   margin: 10px;
+  visibility: hidden;
 }
 
 .logo {
@@ -60,7 +62,6 @@ h3 {
 }
 
 .nav-itens {
-  background: #1C1C13;
   justify-content: center;
   list-style: none;
   display: flex;
@@ -77,7 +78,6 @@ h3 {
   font-size: 1em;
   text-align: center;
   font-weight: lighter;
-  background: red;
 }
 
 a {
@@ -107,6 +107,9 @@ a:hover {
 }
 
 @media (min-width: 250px) and (max-width: 800px) {
+  .menu {
+    visibility: visible;
+  }
   nav {
     height: 80px;
   }
