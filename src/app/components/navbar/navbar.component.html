@@ -6,16 +6,21 @@
 <a class="icon" href="https://www.instagram.com/grupoyamada/reels/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 --->
   </div>
-  <div class="logo">
-      <img ngSrc="assets/logoyamada.svg" alt="logo yamada" height="61" width="110"/>
+  <div class="navbar-superior">
+    <div class="menu" (click)="onClickMenu()">
+      <img src="assets/icons/menu.svg" alt="responsible menu" >
+    </div>
+    <div class="logo">
+        <img src="assets/logoyamada.svg" alt="logo yamada" height="61" width="110"/>
+    </div>
   </div>
   <div class="links">
-    <ul class="nav-itens">
+    <ul class="nav-itens" [ngStyle]="{'transform': transform}" >
       <li [routerLinkActive]="'active'"><a routerLink="home">Home</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="sobre">Sobre nós</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="servicos">Serviços</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="produtos">Produtos</a></li>
-      <li [routerLinkActive]="'active'"><a routerLink="orcamentos">Orçamentos</a></li>
+      <li [routerLinkActive]="'active'" [ngStyle]="{'color': 'color'}"><a routerLink="sobre">Sobre nós</a></li>
+      <li [routerLinkActive]="'active'" [ngStyle]="{'color': 'color'}"><a routerLink="servicos">Serviços</a></li>
+      <li [routerLinkActive]="'active'" [ngStyle]="{'color': 'color'}"><a routerLink="produtos">Produtos</a></li>
+      <li [routerLinkActive]="'active'" [ngStyle]="{'color': 'color'}"><a routerLink="orcamentos">Orçamentos</a></li>
     </ul>
   </div>
 </nav>
