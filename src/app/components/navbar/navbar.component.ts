@@ -20,7 +20,7 @@ export class NavbarComponent {
   visibility = 'visible';
   color = 'red';
   background = 'red';
-  transform = 'translateX(0)';
+  transform = '';
 
   constructor(private router: Router) {
   }
@@ -31,9 +31,9 @@ export class NavbarComponent {
 
   onClickMenu() {
     if( this.transform == 'translateX(-100%)') {
-      this.transform = 'translate(100%)';
+      this.transform = 'translate(0)';
     } else {
-      this.transform == 'translateX(-100%)'
+      this.transform = 'translateX(-100%)'
     }
   }
 
