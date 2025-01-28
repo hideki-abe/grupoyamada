@@ -96,16 +96,16 @@ a:visited {
 
 @media (min-width: 800px) and (max-width: 1100px) {
   .line {
-    width: 700px;
+    width: 800px;
   }
   .text {
-    width: 700px;
+    width: 800px;
   }
   #location_map {
-    width: 700px;
+    width: 800px;
   }
   .contato, .logo, .links {
-    width: 250px;
+    width: 266px;
     height: auto;
     font-size: 14px;
   }
