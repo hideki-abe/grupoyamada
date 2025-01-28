@@ -17,9 +17,8 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 })
 export class NavbarComponent {
 
-  color = 'red';
-  background = 'red';
   transform = '';
+  transition = '';
   innerWidth = window.innerWidth;
 
   constructor(private router: Router) {
@@ -30,6 +29,11 @@ export class NavbarComponent {
     this.innerWidth = window.innerWidth;
     if(this.innerWidth >= 800 || this.transform == 'translate(-100%)') {
       this.transform = '';
+      this.transition = '';
+    }
+    if(this.innerWidth < 800){
+      this.transition = 'transition: 0.5s ease';
+      console.log("transition change");
     }
     console.log(this.transform);
   }
