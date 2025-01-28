@@ -35,7 +35,7 @@ export class NavbarComponent {
       this.transition = 'transition: 0.5s ease';
       console.log("transition change");
     }
-    console.log(this.transform);
+    console.log(this.innerWidth);
   }
 
   onClickMenu() {

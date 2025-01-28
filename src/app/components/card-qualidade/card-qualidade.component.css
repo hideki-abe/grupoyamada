@@ -41,14 +41,43 @@ img {
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
   .box {
-    display: grid;
-  }
-
-  li{
   }
   .list {
-
+    width: 1000px;
+    justify-content: center;
   }
+
+  li {
+    width: 220px;
+    height: 120px;
+  }
+
+  .titulo {
+    width: 220px;
+  }
+}
+
+@media (max-width: 880px) {
+  .box {
+    display: flex;
+    justify-content: center;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-auto-rows: 100px 100px;
+    width: 600px;
+    justify-content: center;
+    margin-top: 40px;
+    justify-items: center;
+  }
+  .li {
+    justify-content: center;
+  }
+  p {
+    visibility: hidden;
+  }
+
 }
