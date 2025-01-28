@@ -104,6 +104,9 @@ a:hover {
   .links {
     margin-top: 10px;
   }
+  .nav-itens {
+    margin-top: 25px;
+  }
 }
 
 @media (min-width: 250px) and (max-width: 800px) {
