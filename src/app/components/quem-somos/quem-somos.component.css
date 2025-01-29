@@ -43,3 +43,19 @@ h2 {
   text-align: justify;
   color: #3E3E34;
 }
+
+@media (max-width: 1200px) {
+  .container{
+    width: 100vw;
+  }
+  .content {
+    margin-top: 0;
+    width: 800px;
+    height: 350px;
+  }
+  img {
+    width: 450px;
+    height: 350px;
+  }
+
+}
