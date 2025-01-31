@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ProdutoComponent} from "../../components/produto/produto.component";
 import {Produto} from "../../interfaces/produto";
 import {NgForOf} from "@angular/common";
+import {Papa} from "ngx-papaparse";
 
 @Component({
   selector: 'app-produtos',
@@ -14,6 +15,16 @@ import {NgForOf} from "@angular/common";
   styleUrl: './produtos.component.css'
 })
 export class ProdutosComponent {
+
+  constructor(private papa: Papa) {
+    const csvData = './assets/data/cantoneiras.csv';
+
+    this.papa.parse(csvData,{
+      complete: (result) => {
+        console.log('Parsed: ', result);
+      }
+    });
+  }
 
      produtos: Produto[] = [
       {
