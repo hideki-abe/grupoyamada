@@ -15,15 +15,24 @@ import {Papa} from "ngx-papaparse";
   styleUrl: './produtos.component.css'
 })
 export class ProdutosComponent {
+  csvData: any[] = [];
+  headerRow: any[] = [];
+  csvFilePath = 'src/assets/data/cantoneiras1.csv';
 
   constructor(private papa: Papa) {
-    const csvData = './assets/data/cantoneiras.csv';
-
-    this.papa.parse(csvData,{
-      complete: (result) => {
-        console.log('Parsed: ', result);
+    let options = {
+      delimiter: ',', // delimitador do arquivo CSV
+      header: true, // informa que a primeira linha é o cabeçalho
+      skipEmptyLines: true, // pula linhas vazias
+      complete: (results:any, file:any) => {
+        console.log('Parsed: ', results);
+        this.headerRow = results.meta.fields;
+        this.csvData = results.data;
       }
-    });
+    };
+
+    this.papa.parse(this.csvFilePath, options);
+    console.log(this.csvFilePath);
   }
 
      produtos: Produto[] = [
