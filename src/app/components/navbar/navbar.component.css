@@ -93,7 +93,7 @@ a:hover {
     height: 150px;
   }
   .links {
-    margin-top: 10px;
+    margin-top: 0px;
   }
 }
 
@@ -103,6 +103,7 @@ a:hover {
   }
   .links {
     margin-top: 10px;
+    height: 0px;
   }
   .nav-itens {
     margin-top: 25px;
@@ -124,6 +125,7 @@ a:hover {
   }
   .nav-itens {
     display: block;
+    position: fixed;
     background: rgba(104, 176, 77, 0.8);
     width: 170px;
     height: 100vh;
