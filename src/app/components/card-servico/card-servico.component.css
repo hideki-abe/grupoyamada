@@ -8,7 +8,7 @@ h2 {
 
 .container {
   height: 550px;
-  width: 100%;
+  width: 100vw;
   margin-top: 20px;
   display: inline-flex;
 }
@@ -92,5 +92,43 @@ a:visited {
     width:250px;
     height: 80px;
     margin-top: -92px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto; /* Adjust height to content */
+  }
+
+  .card {
+    width: 90%; /* Take up more width on smaller screens */
+    max-width: 350px; /* But don't grow too large */
+    height: auto; /* Adjust height to content */
+    margin: 10px 0; /* Reduce vertical margin */
+  }
+
+  video {
+    height: auto; /* Height adjusts proportionally */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  }
+
+  .text {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: -60px;
+    padding: 15px; /* Increase padding */
+    box-sizing: border-box; /* Include padding in width/height */
+  }
+
+  .title {
+    font-size: 1.2rem; /* Adjust title size */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description size */
   }
 }
