@@ -1,83 +1,85 @@
 .box {
-  display: inline-flex;
+  display: flex; /* Use flex instead of inline-flex for block-level container */
   width: 100%;
-  height: 244px;
+  height: auto;
+  min-height: auto; /* Remove fixed min-height to be more compact */
   justify-content: center;
+  align-items: center; /* Vertically center the list */
   background: #EFEEEA;
   color: #3E3E34;
-  line-height: 1.3em;
+  line-height: 1.4em; /* Adjust line-height for readability */
   font-weight: 100;
-}
-
-ul {
-  display: flex;
-  text-align: center;
-  align-items: center;
+  padding: 30px 20px; /* Reduced padding */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .list {
-  width: 1200px;
-  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Set a max-width for large desktop screens */
+  gap: 30px; /* Adjust gap for spacing */
+  padding: 0; /* Reset default ul padding */
+  list-style: none; /* Remove list bullets */
 }
 
 li {
-  width: 300px;
-  height: 64px;
+  flex: 1 1 250px; /* Flex properties for responsive items */
+  max-width: 280px; /* Max width for each item on large screens */
+  height: auto; /* Allow height to adjust based on content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img {
-  margin-bottom: 15px;
-  width: 30px;
-  height: 30px;
+  margin-bottom: 10px; /* Reduced margin */
+  width: 28px;
+  height: 28px;
 }
 
 .titulo {
-  width: 300px;
+  width: 100%; /* Take full width of the list item */
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 8px; /* Reduced margin */
   font-weight: 600;
-  font-size: 20px;
-
+  font-size: 1rem; /* 16px */
 }
 
-
-@media (max-width: 1150px) {
-  .box {
-  }
-  .list {
-    width: 1000px;
-    justify-content: center;
-  }
-
-  li {
-    width: 220px;
-    height: 120px;
-  }
-
-  .titulo {
-    width: 220px;
-  }
+li p {
+  font-size: 0.875rem; /* 14px */
+  margin: 0;
+  padding: 0 10px;
 }
 
-@media (max-width: 880px) {
-  .box {
-    display: flex;
-    justify-content: center;
-  }
+/* Tablet view: 2x2 grid */
+@media (max-width: 992px) {
   .list {
     display: grid;
-    grid-template-columns: 300px 300px;
-    grid-auto-rows: 100px 100px;
-    width: 600px;
-    justify-content: center;
-    margin-top: 40px;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 700px;
   }
-  .li {
-    justify-content: center;
+  li {
+    max-width: none; /* Remove max-width from flexbox as grid handles sizing */
+    width: 100%;
   }
-  p {
-    visibility: hidden;
-  }
+}
 
+/* Phone view: single column */
+@media (max-width: 600px) {
+  .box {
+    display: none; /* Hide the entire component on mobile screens */
+  }
+  .list {
+    grid-template-columns: 1fr;
+    gap: 35px; /* Adjust gap for vertical stacking */
+    max-width: 350px;
+  }
+  .titulo {
+    font-size: 1.1rem;
+  }
 }
