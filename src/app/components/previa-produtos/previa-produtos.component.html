@@ -2,20 +2,19 @@
   <div class="title">
     <h2>PRODUTOS <b>EM DESTAQUE</b></h2>
   </div>
-  <div class="box">
-    <div class="img">
-      <img src="/assets/fotos/chapa.png" alt="Card Image">
-      <p>Barras de aço</p>
+  <!-- Desktop: show all -->
+  <div class="box" *ngIf="!isMobile">
+    <div class="img" *ngFor="let produto of produtos">
+      <img [src]="produto.img" alt="Card Image">
+      <p>{{produto.nome}}</p>
       <button class="btn">FAZER ORÇAMENTO</button>
     </div>
+  </div>
+  <!-- Mobile: carousel -->
+  <div class="carousel-previa" *ngIf="isMobile">
     <div class="img">
-      <img src="/assets/fotos/barra%20chata.png" alt="Card Image">
-      <p>Barras Chatas</p>
-      <button class="btn">FAZER ORÇAMENTO</button>
-    </div>
-    <div class="img">
-      <img src="/assets/fotos/trefilado.jpg" alt="Card Image">
-      <p>Trefilados</p>
+      <img [src]="produtos[currentIndex].img" alt="Card Image">
+      <p>{{produtos[currentIndex].nome}}</p>
       <button class="btn">FAZER ORÇAMENTO</button>
     </div>
   </div>
