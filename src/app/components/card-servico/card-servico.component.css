@@ -1,6 +1,6 @@
 .title1 {
   margin-top: 50px;
-  width: 100vw;
+  width: 100%;
 }
 
 h2 {
@@ -76,7 +76,8 @@ a:visited {
 }
 
 .img {
-  width: 100vw;
+  align-self: center;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -107,7 +108,10 @@ a:visited {
     align-items: center;
     height: auto; /* Adjust height to content */
   }
-
+  .title1 {
+    margin-top: 50px;
+    width: 100vw;
+  }
   .card {
     width: 90%; /* Take up more width on smaller screens */
     max-width: 350px; /* But don't grow too large */
@@ -135,5 +139,10 @@ a:visited {
 
   .description {
     font-size: 0.9rem; /* Adjust description size */
+  }
+
+  .img {
+  align-self: center;
+  width: 100vw;
   }
 }
