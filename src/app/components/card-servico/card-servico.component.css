@@ -1,5 +1,6 @@
 .title1 {
   margin-top: 50px;
+  width: 100vw;
 }
 
 h2 {
@@ -72,6 +73,10 @@ a:visited {
 
 .btn:hover {
   cursor: pointer;
+}
+
+.img {
+  width: 100vw;
 }
 
 @media (max-width: 1200px) {
