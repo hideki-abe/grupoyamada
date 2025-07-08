@@ -115,11 +115,11 @@ a:hover {
   }
   nav {
     height: 80px;
-  }
-  img {
+    margin-top: -10px;
   }
   .logo {
     padding: 0;
+    left: 40%;
     border-bottom: none;
   }
   .nav-itens {
