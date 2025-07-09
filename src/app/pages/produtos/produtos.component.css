@@ -14,7 +14,7 @@
   top: 119px;
   left: 0;
   overflow-y: auto;
-  z-index: -5;
+  z-index: 1; /* Ensure sidebar is above background but below content */
 }
 
 .sidebar ul {
@@ -89,12 +89,16 @@ sidebar li:hover {
 }
 
 .table {
-  display: flex;
-  justify-content: center;
+  display: block;              /* Use block to allow scroll to work properly */
   margin-top: 20px;
-  overflow: scroll;
-  max-height: 300px;
-  width: max-content;
+  overflow-x: auto;             /* Enable horizontal scroll */
+  overflow-y: visible;
+  width: 60%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-height: 60vh; */ /* Uncomment if you want vertical scroll for tall tables */
 }
 
 .title {
@@ -107,19 +111,95 @@ sidebar li:hover {
   color: #3E3E34;
 }
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+#customers {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;                  /* Table fills container width */
+  min-width: 900px;             /* Minimum width for table, adjust as needed */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  table-layout: auto;           /* Let columns size naturally */
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers td, #customers th {
+  border: none;
+  padding: 14px 18px;
+  text-align: left;
+}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr {
+  transition: background 0.2s;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f6f9f6;
+}
+
+#customers tr:hover {
+  background-color: #e2f5e2;
+}
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
-  color: white;
+  background: #68B04D;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#customers td {
+  color: #333;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .table {
+    width: 100%;        /* Full width on small screens */
+    max-width: 100vw;
+    padding: 0 8px;
+  }
+  #customers th, #customers td {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .table {
+    max-width: 100vw;
+    padding: 0 2px;
+  }
+  #customers, #customers thead, #customers tbody, #customers tr, #customers th, #customers td {
+    display: block;
+    width: 100%;
+  }
+  #customers thead {
+    display: none;
+  }
+  #customers tr {
+    margin-bottom: 18px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 8px 0;
+  }
+  #customers td {
+    padding: 10px 12px;
+    text-align: right;
+    position: relative;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  #customers td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 700;
+    color: #68B04D;
+    text-transform: uppercase;
+    font-size: 0.92rem;
+  }
 }

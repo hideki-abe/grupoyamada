@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ProdutoComponent} from "../../components/produto/produto.component";
 import {Produto} from "../../interfaces/produto";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {Papa} from "ngx-papaparse";
 
 @Component({
@@ -9,7 +9,8 @@ import {Papa} from "ngx-papaparse";
   standalone: true,
   imports: [
     ProdutoComponent,
-    NgForOf
+    NgForOf,
+    NgIf
   ],
   templateUrl: './produtos.component.html',
   styleUrl: './produtos.component.css'
@@ -17,15 +18,28 @@ import {Papa} from "ngx-papaparse";
 export class ProdutosComponent {
   csvData: any[] = [];
   headerRow: any[] = [];
-  csvFilePath = 'src/assets/data/cantoneiras1.csv';
+  csvFilePath = '/assets/csv/tubos_mecanicos.csv'; // <-- Use leading slash for assets
+
+  onInit() {
+    console.log("Initializing component: ", this.csvData.at(0));
+  }
 
   constructor(private papa: Papa) {
     let options = {
-      delimiter: ',', // delimitador do arquivo CSV
-      header: true, // informa que a primeira linha é o cabeçalho
-      skipEmptyLines: true, // pula linhas vazias
+      delimiter: ',',
+      header: true,
+      skipEmptyLines: true,
+      download: true,
+      encoding: 'utf-8', // Ensure correct encoding
+      transformHeader: (header: string) => {
+        // Remove BOM and quotes from all headers
+        return header.replace(/^\uFEFF/, '').replace(/^"|"$/g, '').trim();
+      },
       complete: (results:any, file:any) => {
         console.log('Parsed: ', results);
+        // Defensive: log meta.fields and first row
+        console.log('Headers:', results.meta.fields);
+        console.log('First row:', results.data[0]);
         this.headerRow = results.meta.fields;
         this.csvData = results.data;
       }
@@ -35,7 +49,7 @@ export class ProdutosComponent {
     console.log(this.csvFilePath);
   }
 
-     produtos: Produto[] = [
+  produtos: Produto[] = [
       {
         id: 1,
         name: 'Cantoneiras',
@@ -118,5 +132,4 @@ export class ProdutosComponent {
 
 
     ]
-
 }
