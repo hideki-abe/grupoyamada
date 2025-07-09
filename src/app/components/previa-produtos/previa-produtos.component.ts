@@ -52,7 +52,7 @@ export class PreviaProdutosComponent implements OnInit {
   }
 
   checkMobile() {
-    this.isMobile = window.innerWidth <= 700;
+    this.isMobile = window.innerWidth <= 1000;
     this.startAutoSlide();
   }
 

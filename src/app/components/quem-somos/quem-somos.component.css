@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  width: 99vw;
+  width: 100vw;
   height: 600px;
   background: #EFEEEA;
   justify-self: center;
@@ -55,6 +55,7 @@ h2 {
   
   .container{
     width: 100vw;
+    height: min-content;
   }
   .content {
     margin-top: 0;
@@ -64,6 +65,10 @@ h2 {
   img {
     width: 450px;
     height: 350px;
+  }
+
+  .imagem {
+    display: none;
   }
 
 }

@@ -7,6 +7,10 @@
   color: white;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 nav {
   background: #68B04D;
   width: 100%;
@@ -52,7 +56,7 @@ h3 {
 
 .logo {
   position: absolute;
-  left: 50%;
+  left: 47%;
   top: 2px;
   padding-top: 10px;
   padding-bottom: 15px;
