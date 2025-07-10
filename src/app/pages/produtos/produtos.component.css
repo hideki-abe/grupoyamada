@@ -125,8 +125,9 @@ sidebar li:hover {
 
 #customers td, #customers th {
   border: none;
-  padding: 14px 18px;
-  text-align: left;
+  padding: 10px 14px;
+  width: 120px;
+  text-align: center;
 }
 
 #customers tr {

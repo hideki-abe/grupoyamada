@@ -1,7 +1,7 @@
 Ø Externo (mm),Polegada,0.90 mm,1.00 mm,1.20 mm,1.50 mm,1.90 mm,2.00 mm,2.25 mm,2.65 mm,Comprimento (m)
-15.870 kg/m,5/8,0.332 kg/m,0.367 kg/m,0.434 kg/m,0.532 kg/m,nan kg/m,nan kg/m,nan kg/m,nan kg/m,6
-19.050 kg/m,3/4,0.403 kg/m,0.445 kg/m,0.528 kg/m,0.649 kg/m,0.804 kg/m,nan kg/m,nan kg/m,nan kg/m,6
-20.700 kg/m,13/16,0.439 kg/m,0.486 kg/m,0.577 kg/m,0.704 kg/m,0.861 kg/m,nan kg/m,nan kg/m,nan kg/m,6
-21.300 kg/m,27/32,0.502 kg/m,0.592 kg/m,0.726 kg/m,0.908 kg/m,0.951 kg/m,1.056 kg/m,1.219 kg/m,nan kg/m,6
-22.220 kg/m,7/8,0.473 kg/m,0.523 kg/m,0.622 kg/m,0.766 kg/m,0.952 kg/m,nan kg/m,nan kg/m,nan kg/m,6
-24.000 kg/m,"1""",0.544 kg/m,0.602 kg/m,0.716 kg/m,0.886 kg/m,1.100 kg/m,1.154 kg/m,1.285 kg/m,1.487 kg/m,6
+15.870,5/8,0.332 kg/m,0.367 kg/m,0.434 kg/m,0.532 kg/m,-,-,-,-,6
+19.050,3/4,0.403 kg/m,0.445 kg/m,0.528 kg/m,0.649 kg/m,0.804 kg/m,-,-,-,6
+20.700,13/16,0.439 kg/m,0.486 kg/m,0.577 kg/m,0.704 kg/m,0.861 kg/m,-,-,-,6
+21.300,27/32,0.502 kg/m,0.592 kg/m,0.726 kg/m,0.908 kg/m,0.951 kg/m,1.056 kg/m,1.219 kg/m,-,6
+22.220,7/8,0.473 kg/m,0.523 kg/m,0.622 kg/m,0.766 kg/m,0.952 kg/m,-,-,-,6
+24.000,"1",0.544 kg/m,0.602 kg/m,0.716 kg/m,0.886 kg/m,1.100 kg/m,1.154 kg/m,1.285 kg/m,1.487 kg/m,6
