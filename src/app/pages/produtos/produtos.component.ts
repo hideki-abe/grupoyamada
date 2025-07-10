@@ -18,7 +18,7 @@ import {Papa} from "ngx-papaparse";
 export class ProdutosComponent {
   csvData: any[] = [];
   headerRow: any[] = [];
-  csvFilePath = '/assets/csv/tubos_mecanicos.csv'; // <-- Use leading slash for assets
+  csvFilePath = '/assets/csv/barra_chata.csv'; // <-- Use leading slash for assets
 
   onInit() {
     console.log("Initializing component: ", this.csvData.at(0));
