@@ -25,21 +25,24 @@
     <li>Ferros Fundidos</li>
   </ul>
   <h2 class="title">Tubos Mecânicos</h2>
-  <div class="table">
-    <table id="customers" *ngIf="headerRow.length && csvData.length">
-      <thead>
-        <tr>
-          <th *ngFor="let col of headerRow">{{ col }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of csvData">
-          <td *ngFor="let col of headerRow" [attr.data-label]="col">{{ row[col] }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div *ngIf="!csvData.length">
-      Carregando dados...
+  <div class="table-row">
+    <img class="table-img" src="/assets/fotos/bc.png" alt="Barra Chata" />
+    <div class="table">
+      <table id="customers" *ngIf="headerRow.length && csvData.length">
+        <thead>
+          <tr>
+            <th *ngFor="let col of headerRow">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of csvData">
+            <td *ngFor="let col of headerRow" [attr.data-label]="col">{{ row[col] }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="!csvData.length">
+        Carregando dados...
+      </div>
     </div>
   </div>
 </div>
