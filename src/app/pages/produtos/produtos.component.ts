@@ -75,8 +75,35 @@ export class ProdutosComponent {
   }
 
   selectProductType(item: any) {
-    this.selectedProductType = item;
-    this.parseCsv(item.csvFilePath);
+    if (item.key === this.selectedProductType.key) {
+      // Already selected, do nothing
+      return;
+    }
+    // Fade out current content
+    this.fadeOutTableAndImage(() => {
+      this.selectedProductType = item;
+      this.parseCsv(item.csvFilePath);
+      setTimeout(() => {
+        this.fadeInTableAndImage();
+      }, 350); // 350ms delay for transition
+    });
+  }
+
+  fadeOutTableAndImage(callback: () => void) {
+    const tableRow = document.querySelector('.table-row');
+    if (tableRow) {
+      (tableRow as HTMLElement).style.opacity = '0';
+      setTimeout(callback, 350);
+    } else {
+      callback();
+    }
+  }
+
+  fadeInTableAndImage() {
+    const tableRow = document.querySelector('.table-row');
+    if (tableRow) {
+      (tableRow as HTMLElement).style.opacity = '1';
+    }
   }
 
   parseCsv(path: string) {
