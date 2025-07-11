@@ -17,16 +17,13 @@
   </div>
   --->
   <ul class="list">
-    <li>Cantoneiras</li>
-    <li>Vigas</li>
-    <li>Barras</li>
-    <li>Chapas</li>
-    <li>Tubos</li>
-    <li>Ferros Fundidos</li>
+    <li *ngFor="let item of productTypes" (click)="selectProductType(item)" [class.selected]="item.key === selectedProductType.key">
+      {{ item.label }}
+    </li>
   </ul>
-  <h2 class="title">Tubos Mecânicos</h2>
+  <h2 class="title">{{ selectedProductType.label }}</h2>
   <div class="table-row">
-    <img class="table-img" src="/assets/fotos/bc.png" alt="Barra Chata" />
+    <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
     <div class="table">
       <table id="customers" *ngIf="headerRow.length && csvData.length">
         <thead>
@@ -46,3 +43,4 @@
     </div>
   </div>
 </div>
+

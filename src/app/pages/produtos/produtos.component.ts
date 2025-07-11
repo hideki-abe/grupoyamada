@@ -18,35 +18,85 @@ import {Papa} from "ngx-papaparse";
 export class ProdutosComponent {
   csvData: any[] = [];
   headerRow: any[] = [];
-  csvFilePath = '/assets/csv/barra_chata.csv'; // <-- Use leading slash for assets
+
+  productTypes = [
+    {
+      key: 'cantoneiras',
+      label: 'Cantoneiras',
+      csvFilePath: '/assets/csv/cantoneiras.csv',
+      imgSrc: '/assets/fotos/cantoneira.png'
+    },
+    {
+      key: 'vigas',
+      label: 'Vigas',
+      csvFilePath: '/assets/csv/vigas.csv',
+      imgSrc: '/assets/fotos/viga.png'
+    },
+    {
+      key: 'barras',
+      label: 'Barras',
+      csvFilePath: '/assets/csv/barras.csv',
+      imgSrc: '/assets/fotos/barra.png'
+    },
+    {
+      key: 'chapas',
+      label: 'Chapas',
+      csvFilePath: '/assets/csv/chapas.csv',
+      imgSrc: '/assets/fotos/chapas.jpg'
+    },
+    {
+      key: 'tubos',
+      label: 'Tubos',
+      csvFilePath: '/assets/csv/tubos.csv',
+      imgSrc: '/assets/fotos/tubos.jpg'
+    },
+    {
+      key: 'ferros_fundidos',
+      label: 'Ferros Fundidos',
+      csvFilePath: '/assets/csv/ferros_fundidos.csv',
+      imgSrc: '/assets/fotos/ferrofundido.webp'
+    },
+    {
+      key: 'ferros_chatos',
+      label: 'Ferros Chatos',
+      csvFilePath: '/assets/csv/barra_chata.csv',
+      imgSrc: '/assets/fotos/bc.png'
+    }
+  ];
+
+  selectedProductType = this.productTypes[this.productTypes.length - 1]; // Default: Ferros Chatos
 
   onInit() {
     console.log("Initializing component: ", this.csvData.at(0));
   }
 
   constructor(private papa: Papa) {
+    this.parseCsv(this.selectedProductType.csvFilePath);
+  }
+
+  selectProductType(item: any) {
+    this.selectedProductType = item;
+    this.parseCsv(item.csvFilePath);
+  }
+
+  parseCsv(path: string) {
+    this.csvData = [];
+    this.headerRow = [];
     let options = {
       delimiter: ',',
       header: true,
       skipEmptyLines: true,
       download: true,
-      encoding: 'utf-8', // Ensure correct encoding
+      encoding: 'utf-8',
       transformHeader: (header: string) => {
-        // Remove BOM and quotes from all headers
         return header.replace(/^\uFEFF/, '').replace(/^"|"$/g, '').trim();
       },
-      complete: (results:any, file:any) => {
-        console.log('Parsed: ', results);
-        // Defensive: log meta.fields and first row
-        console.log('Headers:', results.meta.fields);
-        console.log('First row:', results.data[0]);
+      complete: (results: any, file: any) => {
         this.headerRow = results.meta.fields;
         this.csvData = results.data;
       }
     };
-
-    this.papa.parse(this.csvFilePath, options);
-    console.log(this.csvFilePath);
+    this.papa.parse(path, options);
   }
 
   produtos: Produto[] = [
