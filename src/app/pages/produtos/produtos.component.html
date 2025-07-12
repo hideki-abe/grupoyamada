@@ -1,21 +1,4 @@
 <div class="content">
-  <!---
-  <div class="sidebar">
-    <ul>
-      <li><a href="#" onclick="selectCard(1)">Vigas</a></li>
-      <hr/>
-      <li><a href="#" onclick="selectCard(2)">Trefilados</a></li>
-      <hr/>
-      <li><a href="#" onclick="selectCard(2)">Chapas</a></li>
-      <hr/>
-    </ul>
-  </div>
-  <div class="card-container">
-    <div *ngFor="let produto of produtos" class="card">
-      <app-produto [produto]="produto"/>
-    </div>
-  </div>
-  --->
   <ul class="list">
     <li *ngFor="let item of productTypes" (click)="selectProductType(item)" [class.selected]="item.key === selectedProductType.key">
       {{ item.label }}
@@ -23,7 +6,14 @@
   </ul>
   <h2 class="title">{{ selectedProductType.label }}</h2>
   <div class="table-row">
-    <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
+    <div class="image-description-container">
+      <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
+      <div class="table-description" *ngIf="selectedProductType.description">
+        <div *ngFor="let line of getFormattedDescription()" class="description-line">
+          <strong>{{ line.type }}</strong>: {{ line.text }}
+        </div>
+      </div>
+    </div>
     <div class="table">
       <table id="customers" *ngIf="headerRow.length && csvData.length">
         <thead>

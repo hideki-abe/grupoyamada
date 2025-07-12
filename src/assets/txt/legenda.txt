@@ -1,0 +1,9 @@
+Legenda das siglas de aço (cantoneiras Gerdau):
+
+MR250: Aço carbono comum, com resistência mínima de 250 MPa. Usado em estruturas metálicas simples e serralheria.
+
+AR350: Aço de alta resistência, com limite de escoamento de 350 MPa. Ideal para construções metálicas e implementos agrícolas.
+
+AR415: Aço de alta resistência, com limite de escoamento de 415 MPa. Aplicado em estruturas exigentes, máquinas e equipamentos.
+
+AR350COR: Aço patinável, resistente à corrosão atmosférica, com resistência de 350 MPa. Utilizado em torres, fachadas e estruturas externas.

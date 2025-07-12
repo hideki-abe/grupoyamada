@@ -97,6 +97,30 @@ sidebar li:hover {
   align-items: center;
 }
 
+.table-description {
+  width: 380px;
+  max-width: 100%;
+  margin-top: 16px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.description-line {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.description-line:last-child {
+  margin-bottom: 0;
+}
+
+.description-line strong {
+  color: #3A7CA5;
+  font-weight: 600;
+}
+
 .table {
   display: block;              /* Use block to allow scroll to work properly */
   margin-top: 20px;
@@ -180,12 +204,18 @@ sidebar li:hover {
   width: 380px;
   max-width: 100%;
   height: auto;
-  margin-right: 32px;
   margin-top: 50px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   object-fit: contain;
   background: #f6f6f6;
+}
+
+.image-description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 32px;
 }
 
 @media (max-width: 900px) {
@@ -197,8 +227,15 @@ sidebar li:hover {
     flex-direction: column;
     align-items: center;
   }
-  .table-img {
+  .image-description-container {
     margin: 0 0 18px 0;
+  }
+  .table-img {
+    margin-top: 0;
+    width: 90vw;
+    max-width: 380px;
+  }
+  .table-description {
     width: 90vw;
     max-width: 380px;
   }
@@ -210,6 +247,11 @@ sidebar li:hover {
   #customers th, #customers td {
     padding: 10px 8px;
     font-size: 0.95rem;
+  }
+  .table-description {
+    margin: 0 0 18px 0;
+    width: 90vw;
+    max-width: 380px;
   }
 }
 
