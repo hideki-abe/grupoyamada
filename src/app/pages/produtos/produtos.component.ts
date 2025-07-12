@@ -33,10 +33,10 @@ export class ProdutosComponent {
       imgSrc: '/assets/fotos/viga.png'
     },
     {
-      key: 'barras',
-      label: 'Barras',
-      csvFilePath: '/assets/csv/barras.csv',
-      imgSrc: '/assets/fotos/barra.png'
+      key: 'trefilados',
+      label: 'Trefilados',
+      csvFilePath: '/assets/csv/trefilados.csv',
+      imgSrc: '/assets/fotos/trefilados.png'
     },
     {
       key: 'chapas',
