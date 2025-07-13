@@ -23,7 +23,16 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of csvData">
-            <td *ngFor="let col of headerRow" [attr.data-label]="col">{{ row[col] }}</td>
+            <td *ngFor="let col of headerRow" [attr.data-label]="col">
+              <span *ngIf="col === 'Formato' && selectedProductType.key === 'trefilados'" 
+                    class="shape-symbol" 
+                    [ngClass]="getShapeClass(row[col])">
+                {{ getShapeSymbol(row[col]) }}
+              </span>
+              <span *ngIf="col !== 'Formato' || selectedProductType.key !== 'trefilados'">
+                {{ row[col] }}
+              </span>
+            </td>
           </tr>
         </tbody>
       </table>

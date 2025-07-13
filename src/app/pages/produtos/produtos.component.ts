@@ -32,7 +32,7 @@ export class ProdutosComponent {
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
       imgSrc: '/assets/fotos/viga.png',
-      description: ''
+      description: 'MR250: Aço carbono comum, resistência mínima de 250 MPa.AR350: Aço de alta resistência com limite de escoamento de 350 MPa.AR415: Aço de alta resistência com limite de escoamento de 415 MPa.'
     },
     {
       key: 'trefilados',
@@ -156,5 +156,37 @@ export class ProdutosComponent {
           text: part.trim().replace(/\.$/, '')
         };
       });
+  }
+
+  getShapeSymbol(formato: string): string {
+    if (!formato) return '';
+    
+    const formatoLower = formato.toLowerCase();
+    
+    if (formatoLower.includes('redondo')) {
+      return '●';
+    } else if (formatoLower.includes('quadrado')) {
+      return '■';
+    } else if (formatoLower.includes('sextavado')) {
+      return '⬢';
+    }
+    
+    return formato; // Return original text if no match
+  }
+
+  getShapeClass(formato: string): string {
+    if (!formato) return '';
+    
+    const formatoLower = formato.toLowerCase();
+    
+    if (formatoLower.includes('redondo')) {
+      return 'shape-circle';
+    } else if (formatoLower.includes('quadrado')) {
+      return 'shape-square';
+    } else if (formatoLower.includes('sextavado')) {
+      return 'shape-hexagon';
+    }
+    
+    return '';
   }
 }
