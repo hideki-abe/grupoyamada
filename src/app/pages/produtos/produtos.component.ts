@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ProdutoComponent} from "../../components/produto/produto.component";
 import {Produto} from "../../interfaces/produto";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgForOf, NgIf, NgClass} from "@angular/common";
 import {Papa} from "ngx-papaparse";
 
 @Component({
@@ -10,7 +10,8 @@ import {Papa} from "ngx-papaparse";
   imports: [
     ProdutoComponent,
     NgForOf,
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './produtos.component.html',
   styleUrl: './produtos.component.css'
@@ -24,15 +25,15 @@ export class ProdutosComponent {
       key: 'cantoneiras',
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
-      imgSrc: '/assets/fotos/cantoneira.png',
-      description: 'MR250: Aço carbono comum. AR350: Aço de alta resistência 350 MPa. AR415: Aço de alta resistência 415 MPa.'
+      imgSrc: '/assets/fotos/bc.png',
+      description: 'MR250: Aço carbono comum.AR350: Aço de alta resistência 350 MPa.AR415: Aço de alta resistência 415 MPa.'  
     },
     {
       key: 'vigas',
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
       imgSrc: '/assets/fotos/viga.png',
-      description: 'MR250: Aço carbono comum, resistência mínima de 250 MPa. AR350: Aço de alta resistência com limite de escoamento de 350 MPa. AR415: Aço de alta resistência com limite de escoamento de 415 MPa.'
+      description: 'MR250: Aço carbono comum, resistência mínima de 250 MPa.AR350: Aço de alta resistência com limite de escoamento de 350 MPa.AR415: Aço de alta resistência com limite de escoamento de 415 MPa.'
     },
     {
       key: 'trefilados',

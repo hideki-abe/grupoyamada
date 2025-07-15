@@ -1,5 +1,99 @@
 <body>
   <div class="content">
+    <!-- Hero Section with Model Photos -->
+    <!---
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="page-title">NOSSOS SERVIÇOS</h1>
+        <p class="page-subtitle">Soluções completas em metalurgia com qualidade e precisão</p>
+      </div>
+      <div class="hero-images">
+        <div class="hero-image-card">
+          <img src="/assets/fotos/chapa.png" alt="Corte a Laser" class="hero-img">
+          <div class="hero-overlay">
+            <h3>Tecnologia Avançada</h3>
+          </div>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/fotos/trefilado.jpg" alt="Soldagem" class="hero-img">
+          <div class="hero-overlay">
+            <h3>Precisão Artesanal</h3>
+          </div>
+        </div>
+        <div class="hero-image-card">
+          <img src="/assets/fotos/grupo.png" alt="Usinagem" class="hero-img">
+          <div class="hero-overlay">
+            <h3>Qualidade Superior</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-header">
+          <div class="service-icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <div class="service-image" *ngIf="service.imageUrl">
+            <img [src]="service.imageUrl" [alt]="service.title">
+          </div>
+        </div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">{{ feature }}</li>
+        </ul>
+        <div class="service-specs" *ngIf="service.specifications">
+          <h4>Especificações:</h4>
+          <div class="specs-list">
+            <span *ngFor="let spec of service.specifications" class="spec-item">{{ spec }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Showcase -->
+    <div class="process-showcase">
+      <h2>NOSSO PROCESSO DE TRABALHO</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-image">
+            <img src="/assets/fotos/processo-consulta.jpg" alt="Consulta">
+          </div>
+          <div class="step-content">
+            <h3>1. Consulta</h3>
+            <p>Analisamos suas necessidades e especificações técnicas</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-image">
+            <img src="/assets/fotos/processo-desenvolvimento.jpg" alt="Desenvolvimento">
+          </div>
+          <div class="step-content">
+            <h3>2. Desenvolvimento</h3>
+            <p>Criamos soluções personalizadas para seu projeto</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-image">
+            <img src="/assets/fotos/processo-execucao.jpg" alt="Execução">
+          </div>
+          <div class="step-content">
+            <h3>3. Execução</h3>
+            <p>Implementamos com precisão e qualidade garantida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <h2>Precisa de um orçamento?</h2>
+      <p>Entre em contato conosco para mais informações sobre nossos serviços</p>
+      <button class="contact-btn" (click)="scrollToContact()">SOLICITAR ORÇAMENTO</button>
+    </div>
   </div>
 </body>
 
