@@ -21,7 +21,7 @@ nav {
   top: 0;
   z-index: 9;
   margin-top: -7px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .contacts {
@@ -82,7 +82,7 @@ h3 {
   padding: 10px 5px 10px 5px;
   font-size: 1em;
   text-align: center;
-  font-weight: lighter;
+  font-weight: 800;
 }
 
 a {

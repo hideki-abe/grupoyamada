@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  width: 100vw;
+  width: 99vw;
   height: 600px;
   background: #EFEEEA;
   justify-self: center;

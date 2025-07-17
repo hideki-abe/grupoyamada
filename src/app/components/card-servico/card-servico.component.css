@@ -9,7 +9,7 @@ h2 {
 
 .container {
   height: 550px;
-  width: 100vw;
+  width: 100%;
   margin-top: 20px;
   display: inline-flex;
 }
