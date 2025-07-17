@@ -1,52 +1,48 @@
 <main class="container">
-
-  <section class="hist">
-    <h2>História</h2>
-    <br/>
-    <p>Desde a sua fundação em 1970, a Metalúrgica Yamada tem se destacado como um pilar de inovação e qualidade no setor metalúrgico.
-      Fundada por um grupo visionário de engenheiros e técnicos apaixonados pela indústria, nossa empresa começou sua jornada com um pequeno,
-      mas ambicioso, projeto de oferecer soluções metalúrgicas de alto padrão. Com sede em Goiânia, nossa história é marcada por um compromisso
-      inabalável com a excelência e a inovação. No início, operávamos com uma estrutura modesta, mas com grande determinação e expertise. O foco
-      em qualidade e atendimento ao cliente rapidamente nos permitiu conquistar a confiança dos principais setores industriais.
-      O novo milênio trouxe novos desafios e oportunidades. Com a globalização e a evolução tecnológica, nos adaptamos e evoluímos continuamente.
-      A introdução de práticas sustentáveis e a adoção de novas tecnologias ajudaram a manter nossa posição de liderança e atender às demandas
-      de um mercado em constante mudança.</p>
-    <br/>
-    <p>Hoje, a Metalúrgica Yamada é uma das líderes do setor metalúrgico, com uma infraestrutura moderna e uma equipe altamente qualificada. Continuamos a investir em inovação e em nossa gente, mantendo nosso compromisso com a qualidade, a segurança e a sustentabilidade. Nossa missão é proporcionar soluções metalúrgicas que não apenas atendam, mas superem as expectativas de nossos clientes.</p>
-    <br/>
-    <p>Ao longo de mais de cinco décadas, nossa trajetória é marcada por dedicação, inovação e crescimento. A Metalúrgica Yamada não é apenas uma empresa; é um legado de excelência e um símbolo de confiança. Agradecemos a todos os nossos colaboradores, parceiros e clientes que fizeram parte desta jornada e nos ajudaram a construir uma história de sucesso.</p>
-    <br/>
-    <p>Para saber mais sobre nossa história e como podemos ajudar a sua empresa a alcançar novos patamares, entre em contato conosco hoje mesmo.</p>
+  <section class="contact-header">
+    <h2>Contato</h2>
+    <p>Entre em contato com um de nossos vendedores ou envie uma mensagem pelo formulário abaixo.</p>
   </section>
 
-  <section class="intro">
-    <h2>Quem Somos</h2><br/>
-    <p>Somos uma empresa dedicada a fornecer soluções inovadoras e de alta qualidade para nossos clientes. Nossa missão é transformar suas ideias em realidade com excelência e comprometimento.</p>
-  </section>
-
-  <section class="mission">
-    <h2>Nossa Missão</h2><br/>
-    <p>Entregar produtos e serviços que superem as expectativas dos nossos clientes, contribuindo para o sucesso deles e para o crescimento sustentável da empresa.</p>
-  </section>
-
-  <!----
-  <section class="team">
-    <h2>Nosso Time</h2>
-    <div class="team-member">
-      <img src="team-member1.jpg" alt="Membro da Equipe 1">
-      <h3>Maria Silva</h3>
-      <p>Diretora Executiva</p>
-    </div>
-    <div class="team-member">
-      <img src="team-member2.jpg" alt="Membro da Equipe 2">
-      <h3>João Pereira</h3>
-      <p>Gerente de Projetos</p>
-    </div>
-    <div class="team-member">
-      <img src="team-member3.jpg" alt="Membro da Equipe 3">
-      <h3>Ana Costa</h3>
-      <p>Desenvolvedora Sênior</p>
+  <section class="sellers">
+    <div class="seller-card" *ngFor="let seller of sellers">
+      <h3>{{ seller.name }}</h3>
+      <p><strong>Telefone:</strong> <a [href]="'tel:' + seller.phone">{{ seller.phone }}</a></p>
+      <p><strong>Email:</strong> <a [href]="'mailto:' + seller.email">{{ seller.email }}</a></p>
     </div>
   </section>
-  --->
+
+  <!---
+  <section class="contact-form-section">
+    <h3>Envie uma mensagem</h3>
+    <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form" enctype="multipart/form-data">
+      <div>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" [(ngModel)]="form.nome" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" [(ngModel)]="form.email" required />
+      </div>
+      <div>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" [(ngModel)]="form.mensagem" required></textarea>
+      </div>
+      <div>
+        <label for="files">Anexar arquivos</label>
+        <input id="files" name="files" type="file" (change)="onFilesSelected($event)" multiple />
+        <div *ngIf="selectedFiles?.length">
+          <small>Arquivos selecionados:</small>
+          <ul>
+            <li *ngFor="let file of selectedFiles">{{ file.name }}</li>
+          </ul>
+        </div>
+      </div>
+      <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
+      <div *ngIf="emailSent" class="success-msg">Mensagem enviada com sucesso!</div>
+      <div *ngIf="emailError" class="error-msg">Erro ao enviar mensagem. Tente novamente.</div>
+    </form>
+  </section>
+  -->
 </main>
+
