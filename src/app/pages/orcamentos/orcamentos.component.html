@@ -1,32 +1,44 @@
-<div class="container">
-  <h1>Faça já um orçamento!</h1>
-  <p>Estamos aqui para ajudá-lo a obter o melhor valor para suas necessidades. Preencha o formulário abaixo para receber um orçamento personalizado.</p>
-
-  <form action="/enviar-orcamento" method="post">
-    <h2>Informações de Contato</h2>
-    <label for="nome">Nome Completo:</label>
-    <input type="text" id="nome" name="nome" required>
-
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="telefone">Telefone:</label>
-    <input type="tel" id="telefone" name="telefone">
-
-    <h2>Faça o seu pedido aqui!</h2>
-
-    <label for="descricao">Descrição dos produtos </label>
-    <textarea id="descricao" name="descricao" required></textarea>
-
-    <h2>Observações:</h2>
-    <b>É importante enviar o nome do produtos com as suas respectivas quantidades e medidas para
-    um melhor e mais preciso atendimento!</b>
-
-    <button>Enviar</button>
-
-  </form>
-
-  <div class="mensagem">
-  <p>Obrigado pelo seu interesse! Entraremos em contato o mais breve possível.</p>
+<div class="content">
+  <ul class="list">
+    <li *ngFor="let item of productTypes" (click)="selectProductType(item)" [class.selected]="item.key === selectedProductType.key">
+      {{ item.label }}
+    </li>
+  </ul>
+  <h2 class="title">{{ selectedProductType.label }}</h2>
+  <div class="table-row">
+    <div class="image-description-container">
+      <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
+      <div class="table-description" *ngIf="selectedProductType.description">
+        <div *ngFor="let line of getFormattedDescription()" class="description-line">
+          <strong>{{ line.type }}</strong>: {{ line.text }}
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <table id="customers" *ngIf="headerRow.length && csvData.length">
+        <thead>
+          <tr>
+            <th *ngFor="let col of headerRow">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of csvData">
+            <td *ngFor="let col of headerRow" [attr.data-label]="col">
+              <span *ngIf="col === 'Formato' && selectedProductType.key === 'trefilados'" 
+                    class="shape-symbol" 
+                    [ngClass]="getShapeClass(row[col])">
+                {{ getShapeSymbol(row[col]) }}
+              </span>
+              <span *ngIf="col !== 'Formato' || selectedProductType.key !== 'trefilados'">
+                {{ row[col] }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="!csvData.length">
+        Carregando dados...
+      </div>
+    </div>
   </div>
 </div>

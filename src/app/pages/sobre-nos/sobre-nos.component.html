@@ -1,7 +1,13 @@
 <main class="container">
-  <section class="contact-header">
-    <h2>Contato</h2>
-    <p>Entre em contato com um de nossos vendedores ou envie uma mensagem pelo formulário abaixo.</p>
+  <section class="contact-header improved-contact-header">
+    <h2>FALE CONOSCO</h2>
+    <p class="contact-lead">
+      Precisa de um orçamento rápido ou quer tirar dúvidas sobre nossos produtos?<br />
+      Nossa equipe está pronta para oferecer atendimento personalizado e soluções sob medida para o seu negócio.<br />
+      <span class="contact-highlight"
+        >Escolha um vendedor abaixo ou envie sua mensagem. Vamos adorar conversar com você!</span
+      >
+    </p>
   </section>
 
   <section class="sellers">
@@ -15,7 +21,7 @@
   <!---
   <section class="contact-form-section">
     <h3>Envie uma mensagem</h3>
-    <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form" enctype="multipart/form-data">
+    <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form">
       <div>
         <label for="nome">Nome</label>
         <input id="nome" name="nome" [(ngModel)]="form.nome" required />
@@ -28,21 +34,10 @@
         <label for="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem" [(ngModel)]="form.mensagem" required></textarea>
       </div>
-      <div>
-        <label for="files">Anexar arquivos</label>
-        <input id="files" name="files" type="file" (change)="onFilesSelected($event)" multiple />
-        <div *ngIf="selectedFiles?.length">
-          <small>Arquivos selecionados:</small>
-          <ul>
-            <li *ngFor="let file of selectedFiles">{{ file.name }}</li>
-          </ul>
-        </div>
-      </div>
       <button type="submit" [disabled]="contactForm.invalid">Enviar</button>
       <div *ngIf="emailSent" class="success-msg">Mensagem enviada com sucesso!</div>
       <div *ngIf="emailError" class="error-msg">Erro ao enviar mensagem. Tente novamente.</div>
     </form>
   </section>
   -->
-</main>
 
