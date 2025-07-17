@@ -67,12 +67,28 @@ a:visited {
   border: none;
   width: 317px;
   height: 53px;
-  background: #68B04D;
+  background: #3A7CA5;
   font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(58, 124, 165, 0.2);
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .btn:hover {
   cursor: pointer;
+  background: #2d6284;
+  box-shadow: 0 4px 8px rgba(45, 98, 132, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn a:visited {
+  color: #FFFFFF;
 }
 
 .img {

@@ -113,14 +113,18 @@ p {
   width: 317px;
   height: 53px;
   margin-top: 30px;
-  background: #68B04D;
+  background: #3A7CA5;
   font-size: 20px;
   align-self: end;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(58, 124, 165, 0.2);
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .btn2 {
   font-family: Montserrat, sans-serif;
-  color: #3E3E34;
+  color: #3A7CA5;
   border: none;
   width: 175px;
   height: 30px;
@@ -129,12 +133,18 @@ p {
   font-size: 20px;
   cursor: pointer;
   text-align: end;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .btn2:hover {
+  color: #2d6284;
   text-decoration: underline;
 }
 
 .btn:hover {
   cursor: pointer;
+  background: #2d6284;
+  box-shadow: 0 4px 8px rgba(45, 98, 132, 0.3);
+  transform: translateY(-1px);
 }

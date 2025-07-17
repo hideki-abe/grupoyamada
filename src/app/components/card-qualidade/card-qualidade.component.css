@@ -5,12 +5,13 @@
   min-height: auto; /* Remove fixed min-height to be more compact */
   justify-content: center;
   align-items: center; /* Vertically center the list */
-  background: #EFEEEA;
-  color: #3E3E34;
+  background: #F8FAFC;
+  color: #1E293B;
   line-height: 1.4em; /* Adjust line-height for readability */
   font-weight: 100;
   padding: 30px 20px; /* Reduced padding */
   box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  border-top: 10px solid #3A7CA5;
 }
 
 .list {
@@ -39,6 +40,8 @@ img {
   margin-bottom: 10px; /* Reduced margin */
   width: 28px;
   height: 28px;
+  filter: none;
+  color: #3A7CA5;
 }
 
 .titulo {
@@ -47,12 +50,14 @@ img {
   margin-bottom: 8px; /* Reduced margin */
   font-weight: 600;
   font-size: 1rem; /* 16px */
+  color: #3A7CA5;
 }
 
 li p {
   font-size: 0.875rem; /* 14px */
   margin: 0;
   padding: 0 10px;
+  color: #64748B;
 }
 
 /* Tablet view: 2x2 grid */
