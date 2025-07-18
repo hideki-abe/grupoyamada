@@ -88,7 +88,7 @@ export class ServicosComponent {
       title: 'Soluções em Inox e Alumínio',
       description: 'Oferecemos estruturas, peças e componentes em inox e alumínio para diversos fins, como: bancadas em inox, roscas sem fim, estruturas em geral, entre outros.',
       icon: 'fas fa-cubes',
-      imageUrl: '/assets/fotos/chapa.png',
+      imageUrl: '/assets/fotos/inox.jpg',
       features: [
         'Corte e dobra de inox e alumínio',
         'Acabamentos com solda e polimento',

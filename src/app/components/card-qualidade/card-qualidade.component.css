@@ -11,7 +11,6 @@
   font-weight: 100;
   padding: 30px 20px; /* Reduced padding */
   box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
-  border-top: 10px solid #3A7CA5;
 }
 
 .list {
