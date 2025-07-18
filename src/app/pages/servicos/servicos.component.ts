@@ -18,7 +18,7 @@ export class ServicosComponent {
     {
       title: 'Cortes a Laser',
       description: 'Tecnologia de ponta para cortes precisos em diversos materiais com acabamento perfeito.',
-      icon: 'fas fa-cut',
+      icon: 'fas fa-bolt',
       imageUrl: '/assets/fotos/chapa.png',
       features: [
         'Alta precisão e qualidade',
@@ -35,7 +35,7 @@ export class ServicosComponent {
     {
       title: 'Dobras',
       description: 'Conformação de chapas metálicas com precisão para atender suas necessidades específicas.',
-      icon: 'fas fa-compress-arrows-alt',
+      icon: 'fas fa-drafting-compass',
       imageUrl: '/assets/fotos/chapa.png',
       features: [
         'Dobras precisas e uniformes',
@@ -45,23 +45,22 @@ export class ServicosComponent {
       ],
       specifications: [
         'Até 12,7mm de espessura',
-        'Todos os tipos de materiais',
         'Comprimento até 3000mm'
       ]
     },
     {
       title: 'Cortes com Serra',
       description: 'Serviços especializados de corte para tarugos e trefilados de diversos materiais.',
-      icon: 'fas fa-tools',
+      icon: 'fas fa-cog',
       imageUrl: '/assets/fotos/chapa.png',
       features: [
         'Cortes retos e precisos',
-        'Diversos diâmetros',
+        'Variedade de materiais',
         'Acabamento limpo',
         'Produção em série'
       ],
       specifications: [
-        'Tarugos e trefilados',
+        'Tarugos, tubos e trefilados',
         'Aços 1020, 1045',
         'Cromo níquel'
       ]
@@ -69,7 +68,7 @@ export class ServicosComponent {
     {
       title: 'Projetos Personalizados',
       description: 'Aqui fazemos os projetos do seu jeito em aço carbono, inox e alumínio.',
-      icon: 'fas fa-cogs',
+      icon: 'fas fa-desktop',
       imageUrl: '/assets/fotos/chapa.png',
       features: [
         'Softwares de modelagem avançados',
@@ -78,7 +77,23 @@ export class ServicosComponent {
         'Rapidez na entrega'
       ],
       specifications: [
-        '',
+        'Processos personalizados',
+        'Certificação de qualidade'
+      ]
+    },
+    {
+      title: 'Soluções em Inox e Alumínio',
+      description: 'Oferecemos estruturas, peças e componentes em inox e alumínio para diversos fins, como: bancadas em inox, roscas sem fim, estruturas em geral, entre outros.',
+      icon: 'fas fa-cubes',
+      imageUrl: '/assets/fotos/chapa.png',
+      features: [
+        'Corte e dobra de inox e alumínio',
+        'Acabamentos com solda e polimento',
+        'Serviço personalizado',
+        'Rapidez na entrega'
+      ],
+      specifications: [
+        'Diversos tipos de materiais',
         'Processos personalizados',
         'Certificação de qualidade'
       ]

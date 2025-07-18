@@ -20,6 +20,14 @@ h2 {
   color: #0F6500;
 }
 
+b {
+  text-decoration: underline;
+}
+
+.inox-h2 {
+  margin-top: 20px;
+}
+
 .sellers {
   display: flex;
   flex-direction: column;
