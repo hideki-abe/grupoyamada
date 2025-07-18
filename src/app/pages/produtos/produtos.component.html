@@ -37,7 +37,11 @@
         </tbody>
       </table>
       <div *ngIf="!csvData.length">
-        Carregando dados...
+          <div class="contact-section">
+            <h2>Consulte um vendedor</h2>
+            <p>Entre em contato conosco para mais informações sobre esse produto</p>
+            <button class="contact-btn" (click)="scrollToContact()">QUERO SABER MAIS SOBRE ESSE PRODUTO</button>
+          </div>
       </div>
     </div>
   </div>

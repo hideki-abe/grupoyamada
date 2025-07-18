@@ -3,6 +3,7 @@ import {ProdutoComponent} from "../../components/produto/produto.component";
 import {Produto} from "../../interfaces/produto";
 import {NgForOf, NgIf, NgClass} from "@angular/common";
 import {Papa} from "ngx-papaparse";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-produtos',
@@ -25,21 +26,21 @@ export class ProdutosComponent {
       key: 'cantoneiras',
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
-      imgSrc: '/assets/fotos/bc.png',
+      imgSrc: '/assets/fotos/cantoneiras.jpg',
       description: 'MR250: Aço carbono comum.AR350: Aço de alta resistência 350 MPa.AR415: Aço de alta resistência 415 MPa.'  
     },
     {
       key: 'vigas',
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
-      imgSrc: '/assets/fotos/viga.png',
+      imgSrc: '/assets/fotos/vigas.png',
       description: 'MR250: Aço carbono comum, resistência mínima de 250 MPa.AR350: Aço de alta resistência com limite de escoamento de 350 MPa.AR415: Aço de alta resistência com limite de escoamento de 415 MPa.'
     },
     {
       key: 'trefilados',
       label: 'Trefilados',
       csvFilePath: '/assets/csv/trefilados.csv',
-      imgSrc: '/assets/fotos/trefilados.png',
+      imgSrc: '/assets/fotos/trefilados.jpg',
       description: ''
     },
     {
@@ -60,14 +61,14 @@ export class ProdutosComponent {
       key: 'ferros_fundidos',
       label: 'Ferros Fundidos',
       csvFilePath: '/assets/csv/ferros_fundidos.csv',
-      imgSrc: '/assets/fotos/ferrofundido.webp',
+      imgSrc: '/assets/fotos/fundidos.jpg',
       description: ''
     },
     {
       key: 'ferros_chatos',
       label: 'Ferros Chatos',
       csvFilePath: '/assets/csv/barra_chata.csv',
-      imgSrc: '/assets/fotos/bc.png',
+      imgSrc: '/assets/fotos/fc.png',
       description: ''
     }
   ];
@@ -78,7 +79,7 @@ export class ProdutosComponent {
     console.log("Initializing component: ", this.csvData.at(0));
   }
 
-  constructor(private papa: Papa) {
+  constructor(private papa: Papa, private router: Router) {
     this.parseCsv(this.selectedProductType.csvFilePath);
   }
 
@@ -189,5 +190,11 @@ export class ProdutosComponent {
     }
     
     return '';
+  }
+
+  scrollToContact() {
+    this.router.navigate(['/sobre']).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   }
 }

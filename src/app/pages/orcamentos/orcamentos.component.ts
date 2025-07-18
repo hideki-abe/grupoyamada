@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProdutoComponent } from "../../components/produto/produto.component";
 import { NgForOf, NgIf, NgClass } from "@angular/common";
 import { Papa } from "ngx-papaparse";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-orcamentos',
@@ -77,7 +78,7 @@ export class OrcamentosComponent {
     console.log("Initializing component: ", this.csvData.at(0));
   }
 
-  constructor(private papa: Papa) {
+  constructor(private papa: Papa, private router: Router) {
     this.parseCsv(this.selectedProductType.csvFilePath);
   }
 
@@ -188,5 +189,11 @@ export class OrcamentosComponent {
     }
     
     return '';
+  }
+
+  scrollToContact() {
+    this.router.navigate(['/sobre']).then(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   }
 }
