@@ -7,7 +7,7 @@
     <div class="img" *ngFor="let produto of produtos">
       <img [src]="produto.img" alt="Card Image">
       <p>{{produto.nome}}</p>
-      <button class="btn">FAZER ORÇAMENTO</button>
+      <button class="btn" (click)="onContatoClick()">FAZER ORÇAMENTO</button>
     </div>
   </div>
   <!-- Mobile: carousel -->
@@ -15,11 +15,11 @@
     <div class="img">
       <img [src]="produtos[currentIndex].img" alt="Card Image">
       <p>{{produtos[currentIndex].nome}}</p>
-      <button class="btn">FAZER ORÇAMENTO</button>
+      <button class="btn" (click)="onContatoClick()">FAZER ORÇAMENTO</button>
     </div>
   </div>
 </div>
 <div class="mais">
-  <button class="btn2">Ver mais produtos</button>
+  <button class="btn2" (click)="onContatoClick()">Ver mais produtos</button>
 </div>
 

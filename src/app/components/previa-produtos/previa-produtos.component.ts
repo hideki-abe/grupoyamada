@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { NgIf, NgForOf } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface PreviaProduto {
   img: string;
@@ -15,14 +16,16 @@ interface PreviaProduto {
 })
 export class PreviaProdutosComponent implements OnInit {
   produtos: PreviaProduto[] = [
-    { img: '/assets/fotos/chapa.png', nome: 'Barras de aço' },
-    { img: '/assets/fotos/barra chata.png', nome: 'Barras Chatas' },
-    { img: '/assets/fotos/trefilado.jpg', nome: 'Trefilados' }
+    { img: '/assets/fotos/mecanicos.jpg', nome: 'Ferros Mecânicos 1045' },
+    { img: '/assets/fotos/trefilados.jpg', nome: 'Trefilados 1020/1045' },
+    { img: '/assets/fotos/vigas.jpg', nome: 'Vigas U 1020' }
   ];
   currentIndex = 0;
   isMobile = false;
 
   intervalId: any;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.checkMobile();
@@ -62,5 +65,11 @@ export class PreviaProdutosComponent implements OnInit {
 
   nextProduto() {
     this.currentIndex = (this.currentIndex + 1) % this.produtos.length;
+  }
+
+  onContatoClick() {
+    this.router.navigate(['/sobre']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }
