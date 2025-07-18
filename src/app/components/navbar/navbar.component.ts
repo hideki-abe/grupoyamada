@@ -48,4 +48,8 @@ export class NavbarComponent {
     }
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

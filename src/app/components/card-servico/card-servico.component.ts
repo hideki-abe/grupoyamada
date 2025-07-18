@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from "@angular/router";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: 'app-card-servico',
@@ -12,6 +12,11 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
   styleUrl: './card-servico.component.css'
 })
 export class CardServicoComponent {
+  constructor(private router: Router) {}
 
-
+  navigateToServices() {
+    this.router.navigate(['/servicos']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CardServicoComponent } from "../../components/card-servico/card-servico.component";
 import { NgForOf, NgIf } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-servicos',
@@ -14,12 +15,14 @@ import { NgForOf, NgIf } from "@angular/common";
   styleUrl: './servicos.component.css'
 })
 export class ServicosComponent {
+  constructor(private router: Router) {}
+
   services = [
     {
       title: 'Cortes a Laser',
       description: 'Tecnologia de ponta para cortes precisos em diversos materiais com acabamento perfeito.',
       icon: 'fas fa-bolt',
-      imageUrl: '/assets/fotos/chapa.png',
+      imageUrl: '/assets/fotos/laser.jpg',
       features: [
         'Alta precisão e qualidade',
         'Cortes complexos e detalhados',
@@ -33,12 +36,12 @@ export class ServicosComponent {
       ]
     },
     {
-      title: 'Dobras',
+      title: 'Dobras e Calandras',
       description: 'Conformação de chapas metálicas com precisão para atender suas necessidades específicas.',
       icon: 'fas fa-drafting-compass',
-      imageUrl: '/assets/fotos/chapa.png',
+      imageUrl: '/assets/fotos/dobra.jpg',
       features: [
-        'Dobras precisas e uniformes',
+        'Dobras e calandras precisas e uniformes',
         'Diversos ângulos disponíveis',
         'Acabamento profissional',
         'Flexibilidade de projetos'
@@ -102,7 +105,8 @@ export class ServicosComponent {
   ];
 
   scrollToContact() {
-    // Scroll to contact section or navigate to contact page
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      this.router.navigate(['/sobre']).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }
