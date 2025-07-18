@@ -27,14 +27,14 @@ export class ProdutosComponent {
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
       imgSrc: '/assets/fotos/cantoneiras.jpg',
-      description: 'MR250: Aço carbono comum.AR350: Aço de alta resistência 350 MPa.AR415: Aço de alta resistência 415 MPa.'  
+      description: ''  
     },
     {
       key: 'vigas',
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
       imgSrc: '/assets/fotos/vigas.png',
-      description: 'MR250: Aço carbono comum, resistência mínima de 250 MPa.AR350: Aço de alta resistência com limite de escoamento de 350 MPa.AR415: Aço de alta resistência com limite de escoamento de 415 MPa.'
+      description: ''
     },
     {
       key: 'trefilados',

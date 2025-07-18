@@ -55,7 +55,7 @@ export class ServicosComponent {
       title: 'Cortes com Serra',
       description: 'Serviços especializados de corte para tarugos e trefilados de diversos materiais.',
       icon: 'fas fa-cog',
-      imageUrl: '/assets/fotos/chapa.png',
+      imageUrl: '/assets/fotos/serra.jpg',
       features: [
         'Cortes retos e precisos',
         'Variedade de materiais',
