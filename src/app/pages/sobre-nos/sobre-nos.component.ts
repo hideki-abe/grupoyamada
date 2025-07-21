@@ -21,8 +21,9 @@ export class SobreNosComponent {
   sellers = [
     { name: 'Saleth', phone: '(62) 9 9847-5947', email: 'vendas6.grupoyamada@gmail.com' },
     { name: 'Karla', phone: '(62) 9 9935-5551', email: 'vendas4.grupoyamada@gmail.com' },
-    { name: 'Rafael', phone: '(62) 9 9666-8194', email: 'carlos@yamada.com' },
-    { name: 'Danilla', phone: '(62) 96666-4444', email: 'ana@yamada.com' }
+    { name: 'Rafael', phone: '(62) 9 9666-8194', email: 'vendas1.grupoyamada@gmail.com' },
+    { name: 'Danilla', phone: '(62) 96666-8194', email: 'vendas1.grupoyamada@gmail.com' },
+    { name: 'Carol', phone: '(62) 9 9635-7169', email: 'vendas11.grupoyamada@gmail.com' }
   ];
 
   form = {
