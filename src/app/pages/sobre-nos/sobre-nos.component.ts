@@ -19,10 +19,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class SobreNosComponent {
   sellers = [
-    { name: 'João Silva', phone: '(62) 99999-1111', email: 'joao@yamada.com' },
-    { name: 'Maria Oliveira', phone: '(62) 98888-2222', email: 'maria@yamada.com' },
-    { name: 'Carlos Souza', phone: '(62) 97777-3333', email: 'carlos@yamada.com' },
-    { name: 'Ana Paula', phone: '(62) 96666-4444', email: 'ana@yamada.com' }
+    { name: 'Saleth', phone: '(62) 9 9847-5947', email: 'vendas6.grupoyamada@gmail.com' },
+    { name: 'Karla', phone: '(62) 9 9935-5551', email: 'vendas4.grupoyamada@gmail.com' },
+    { name: 'Rafael', phone: '(62) 9 9666-8194', email: 'carlos@yamada.com' },
+    { name: 'Danilla', phone: '(62) 96666-4444', email: 'ana@yamada.com' }
   ];
 
   form = {
