@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, HostListener} from '@angular/core';
 import {NgOptimizedImage, NgStyle} from "@angular/common";
-import {Router, RouterLink, RouterLinkActive, NavigationEnd} from "@angular/router"; // Add NavigationEnd
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -22,12 +22,6 @@ export class NavbarComponent {
   innerWidth = window.innerWidth;
 
   constructor(private router: Router) {
-    // Close sidebar on route change
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd && this.innerWidth < 800) {
-        this.transform = 'translateX(-100%)';
-      }
-    });
   }
 
   @HostListener('window:resize', ['$event'])
