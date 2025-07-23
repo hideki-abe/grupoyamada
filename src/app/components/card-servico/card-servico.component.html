@@ -2,44 +2,38 @@
   <h2>CONHEÇA <b>NOSSOS SERVIÇOS</b></h2>
 </div>
 <div class="container">
-  <div class="card">
-    <div class="video">
-      <video [muted]="'muted'" loop autoplay src="assets/test.mp4"  class="bg_video">
-      </video>
-      <div class="text">
-        <h2 class="title"><b>Cortes a Laser</b></h2>
-        <p class="description">
-          Cortes a laser em até 1"(1 polegada - 25mm) nas chapas de ferro, alumínio e inox.
-        </p>
+  @for (service of services; track service.title) {
+    <div class="card">
+      <div class="video">
+        <video 
+          class="bg_video"
+          [muted]="true" 
+          loop 
+          autoplay 
+          playsinline
+          preload="metadata"
+          [poster]="service.poster"
+          (error)="onVideoError($event, service)"
+          (loadeddata)="onVideoLoaded($event, service)">
+          
+          @if (service.videos.webm) {
+            <source [src]="service.videos.webm" type="video/webm">
+          }
+          <source [src]="service.videos.mp4" type="video/mp4">
+          
+          <!-- Fallback for browsers that don't support video -->
+          @if (service.poster) {
+            <img [src]="service.poster" [alt]="service.title" class="bg_video">
+          }
+        </video>
+        
+        <div class="text">
+          <h2 class="title"><b>{{ service.title }}</b></h2>
+          <p class="description">{{ service.description }}</p>
+        </div>
       </div>
     </div>
-    </div>
-  <div class="card">
-    <div class="video">
-      <video [muted]="'muted'" autoplay loop class="bg_video" >
-        <source src="/assets/videos/dobra.mp4">
-      </video>
-    </div>
-    <div class="text">
-      <h2 class="title"><b>Dobras</b></h2>
-      <p class="description">
-        Dobras nas chapas de até #1/2' (meia polegada), ou 12,7 milímetros em todos os tipos de materiais.
-      </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="video">
-      <video [muted]="'muted'" autoplay loop class="bg_video">
-        <source src="/assets/videos/serra.mp4">
-      </video>
-    </div>
-    <div class="text">
-      <h2 class="title"><b>Serra</b></h2>
-      <p class="description">
-        Realizamos serviços de cortes de tarugos e trefilados 1020, 1045 e cromo níquel.
-      </p>
-    </div>
-  </div>
+  }
 </div>
 <button class="btn" (click)="navigateToServices()">VER TODOS OS SERVIÇOS</button>
 

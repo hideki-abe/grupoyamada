@@ -26,49 +26,49 @@ export class ProdutosComponent {
       key: 'cantoneiras',
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
-      imgSrc: '/assets/fotos/cantoneiras.jpg',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/cantoneiras.webp?alt=media&token=7e688c20-52f3-4090-ac41-e29541c175b6',
       description: ''  
     },
     {
       key: 'vigas',
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
-      imgSrc: '/assets/fotos/vigas.png',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/vigas.webp?alt=media&token=bb03c63a-ad18-4b03-8561-3b58d72c3e06',
       description: ''
     },
     {
       key: 'trefilados',
       label: 'Trefilados',
       csvFilePath: '/assets/csv/trefilados.csv',
-      imgSrc: '/assets/fotos/trefilados.jpg',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/trefilados.webp?alt=media&token=d6626f09-0cef-4077-a919-51128e997829',
       description: ''
     },
     {
       key: 'chapas',
       label: 'Chapas',
       csvFilePath: '/assets/csv/chapas.csv',
-      imgSrc: '/assets/fotos/chapas.jpg',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/chapas.webp?alt=media&token=4ce04a2f-b410-42d7-b848-7686bee5e46d',
       description: ''
     },
     {
       key: 'tubos',
       label: 'Tubos',
       csvFilePath: '/assets/csv/tubos.csv',
-      imgSrc: '/assets/fotos/tubos.jpg',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
       description: ''
     },
     {
       key: 'ferros_fundidos',
       label: 'Ferros Fundidos',
       csvFilePath: '/assets/csv/ferros_fundidos.csv',
-      imgSrc: '/assets/fotos/fundidos.jpg',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/fundidos.webp?alt=media&token=5eb82ae2-39f8-410a-b5d0-b920066fa20f',
       description: ''
     },
     {
       key: 'ferros_chatos',
       label: 'Ferros Chatos',
       csvFilePath: '/assets/csv/barra_chata.csv',
-      imgSrc: '/assets/fotos/fc.png',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/fc.webp?alt=media&token=c9a34085-667d-4259-9d88-d85ff0d12b7f',
       description: ''
     }
   ];

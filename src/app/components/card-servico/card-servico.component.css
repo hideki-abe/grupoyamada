@@ -20,12 +20,31 @@ h2 {
   margin: 20px;
 }
 
-video {
+video, .bg_video {
   width: 100%;
   height: 480px;
   object-fit: cover;
   color: #dc0000;
   z-index: -10;
+  /* Performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Fallback image styling (same as video) */
+.bg_video img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  z-index: -10;
+}
+
+/* Loading state */
+video:not([data-loaded="true"]) {
+  background-color: #f0f0f0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="20" fill="none" stroke="%23ccc" stroke-width="2"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .text {
