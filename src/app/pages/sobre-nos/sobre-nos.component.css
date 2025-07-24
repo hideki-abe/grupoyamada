@@ -134,7 +134,9 @@ b {
   }
 }
 
-@media (max-width: 600px) {
+/* Responsive for contact header */
+@media (max-width: 700px) {
+
   .seller-card {
     padding: 12px 4vw;
     font-size: 0.98rem;
@@ -143,14 +145,8 @@ b {
   .seller-card:hover::before {
     opacity: 1;
   }
-
-}
-
-/* Responsive for contact header */
-@media (max-width: 700px) {
   .improved-contact-header {
-    padding: 18px 6vw 18px 6vw;
-    max-width: 98vw;
+    max-width: 360px;
   }
   .improved-contact-header h2 {
     font-size: 1.4rem;
