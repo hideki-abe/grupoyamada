@@ -1,13 +1,14 @@
-import {ChangeDetectionStrategy, Component, HostListener} from '@angular/core';
-import {NgOptimizedImage, NgStyle} from "@angular/common";
-import {Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {ChangeDetectionStrategy, Component, HostListener, OnInit, OnDestroy} from '@angular/core';
+import {NgStyle} from "@angular/common";
+import {Router, RouterLink, RouterLinkActive, NavigationEnd} from "@angular/router";
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    NgOptimizedImage,
     RouterLink,
     RouterLinkActive,
     NgStyle
@@ -15,13 +16,28 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnDestroy {
 
   transform = '';
   transition = '';
   innerWidth = window.innerWidth;
+  private routerSubscription: Subscription = new Subscription();
 
   constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+    // Subscribe to router events to close mobile menu on navigation
+    this.routerSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.closeMobileMenu();
+      });
+  }
+
+  ngOnDestroy() {
+    // Unsubscribe to prevent memory leaks
+    this.routerSubscription.unsubscribe();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -35,16 +51,21 @@ export class NavbarComponent {
       this.transition = 'transition: 0.5s ease';
       console.log("transition change");
     }
-    console.log(this.innerWidth);
   }
 
   onClickMenu() {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
     if( this.transform == 'translateX(-100%)' || this.transform == '') {
       this.transform = 'translate(0)';
     } else {
       this.transform = 'translateX(-100%)'
+    }
+  }
+
+  // Method to close mobile menu
+  closeMobileMenu() {
+    if (this.innerWidth < 800 && this.transform === 'translate(0)') {
+      this.transform = 'translateX(-100%)';
     }
   }
 

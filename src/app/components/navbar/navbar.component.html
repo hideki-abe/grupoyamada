@@ -16,11 +16,11 @@
   </div>
   <div class="links">
     <ul class="nav-itens" [ngStyle]="{'transform': transform, 'transition': transition}" >
-      <li routerLinkActive="active"><a routerLink="home" (click)="scrollToTop()">HOME</a></li>
-      <li routerLinkActive="active"><a routerLink="sobre" (click)="scrollToTop()">CONTATO</a></li>
-      <li routerLinkActive="active"><a routerLink="servicos" (click)="scrollToTop()">SERVIÇOS</a></li>
-      <li routerLinkActive="active"><a routerLink="produtos" (click)="scrollToTop()">AÇO CARBONO</a></li>
-      <li routerLinkActive="active"><a routerLink="inox" (click)="scrollToTop()">INOX E ALUMÍNIO</a></li>
+      <li routerLinkActive="active"><a routerLink="home" (click)="scrollToTop(); closeMobileMenu()">HOME</a></li>
+      <li routerLinkActive="active"><a routerLink="sobre" (click)="scrollToTop(); closeMobileMenu()">CONTATO</a></li>
+      <li routerLinkActive="active"><a routerLink="servicos" (click)="scrollToTop(); closeMobileMenu()">SERVIÇOS</a></li>
+      <li routerLinkActive="active"><a routerLink="produtos" (click)="scrollToTop(); closeMobileMenu()">AÇO CARBONO</a></li>
+      <li routerLinkActive="active"><a routerLink="inox" (click)="scrollToTop(); closeMobileMenu()">INOX E ALUMÍNIO</a></li>
     </ul>
   </div>
 </nav>
