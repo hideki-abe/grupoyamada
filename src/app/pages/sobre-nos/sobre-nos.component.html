@@ -14,13 +14,13 @@
     <h2 class="inox-h2">Soluções em <b>Inox e Alumínio</b></h2>
     <div class="seller-card">
       <h3>Wender</h3>
-      <p><strong>Telefone:</strong> <a [href]="">(62) 9 8494-6708</a></p>
+      <p><strong>Telefone:</strong> <a href="https://api.whatsapp.com/send?phone=5562998475947&" target="_blank">(62) 9 8494-6708</a></p>
       <p><strong>Email:</strong> <a [href]="">yamadainox&#64;hotmail.com</a></p>
     </div>
     <h2>Soluções em <b>Aço Carbono</b></h2>
     <div class="seller-card" *ngFor="let seller of sellers">
       <h3>{{ seller.name }}</h3>
-      <p><strong>Telefone:</strong> <a [href]="'tel:' + seller.phone">{{ seller.phone }}</a></p>
+      <p><strong>Telefone:</strong> <a [href]="seller.whatsapp" target="_blank">{{ seller.phone }}</a></p>
       <p><strong>Email:</strong> <a [href]="'mailto:' + seller.email">{{ seller.email }}</a></p>
     </div>
   </section>

@@ -19,11 +19,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class SobreNosComponent {
   sellers = [
-    { name: 'Saleth', phone: '(62) 9 9847-5947', email: 'vendas6.grupoyamada@gmail.com' },
-    { name: 'Karla', phone: '(62) 9 9935-5551', email: 'vendas4.grupoyamada@gmail.com' },
-    { name: 'Rafael', phone: '(62) 9 9666-8194', email: 'vendas1.grupoyamada@gmail.com' },
-    { name: 'Danilla', phone: '(62) 96666-8194', email: 'vendas1.grupoyamada@gmail.com' },
-    { name: 'Carol', phone: '(62) 9 9635-7169', email: 'vendas11.grupoyamada@gmail.com' }
+    { name: 'Saleth', phone: '(62) 9 9847-5947', email: 'vendas6.grupoyamada@gmail.com', whatsapp: 'https://api.whatsapp.com/send?phone=5562998475947&' },
+    { name: 'Karla', phone: '(62) 9 9935-5551', email: 'vendas4.grupoyamada@gmail.com', whatsapp: 'https://api.whatsapp.com/send?phone=5562999355551&' },
+    { name: 'Rafael', phone: '(62) 9 9666-8194', email: 'vendas1.grupoyamada@gmail.com', whatsapp: 'https://api.whatsapp.com/send?phone=55629996668194&' },
+    { name: 'Danilla', phone: '(62) 9 9992-7474', email: 'vendas1.grupoyamada@gmail.com', whatsapp: 'https://api.whatsapp.com/send?phone=556299927474&' },
+    { name: 'Carol', phone: '(62) 9 9635-7169', email: 'vendas11.grupoyamada@gmail.com', whatsapp: 'https://api.whatsapp.com/send?phone=5562996357169&' }
   ];
 
   form = {
