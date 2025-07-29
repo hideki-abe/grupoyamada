@@ -25,17 +25,17 @@ export class VideoService {
   // Configuration for all videos
   private videoConfigs: Record<string, VideoConfig> = {
     'corte-laser': {
-      webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/corte-laser.webm?alt=media&token=a7fc23f4-4892-4692-ba0a-caf96f4c8841`,
+      webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/corte-laser.mp4?alt=media&token=4be28c5d-9f2f-482d-944a-dbdf00f37930`,
       mp4: ``,
       poster: `${this.baseImagePath}laser.jpg`
     },
     'dobra': {
-      webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/dobra.webm?alt=media&token=ed45a1c5-ab3a-414f-b5cf-02f614e0bee9`,
+      webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/dobra.mp4?alt=media&token=f4e4aa2c-dc65-4a77-8041-92fc5c3a0fc1`,
       mp4: ``,
       poster: `${this.baseImagePath}dobra.jpg`
     },
     'serra': {
-			webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/serra.webm?alt=media&token=fa602c43-1378-44e5-9d7d-815cf066b082`,
+			webm: `https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/serra.mp4?alt=media&token=e6f2af11-7865-4b7a-8100-d302ec9fe664`,
       mp4: ``,
       poster: `${this.baseImagePath}serra.jpg`
     }

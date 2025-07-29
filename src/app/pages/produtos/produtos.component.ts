@@ -26,7 +26,7 @@ export class ProdutosComponent {
       key: 'cantoneiras',
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/cantoneiras.webp?alt=media&token=7e688c20-52f3-4090-ac41-e29541c175b6',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/cantoneiras.webp?alt=media&token=86eaa450-ec4c-453a-a5d6-38fbc1c551be',
       description: ''  
     },
     {
