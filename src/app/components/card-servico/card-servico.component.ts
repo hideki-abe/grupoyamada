@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { Router } from "@angular/router";
 import { VideoService, ServiceVideo } from '../../services/video.service';
 
@@ -9,17 +9,43 @@ import { VideoService, ServiceVideo } from '../../services/video.service';
   templateUrl: './card-servico.component.html',
   styleUrl: './card-servico.component.css'
 })
-export class CardServicoComponent implements OnInit {
+export class CardServicoComponent implements OnInit, AfterViewInit {
   
   services: ServiceVideo[] = [];
 
   constructor(
     private router: Router,
-    private videoService: VideoService
+    private videoService: VideoService,
+    private elementRef: ElementRef
   ) {}
 
   ngOnInit() {
     this.initializeServices();
+  }
+
+  ngAfterViewInit() {
+    this.setupLazyVideoLoading();
+  }
+
+  private setupLazyVideoLoading() {
+    const videos = this.elementRef.nativeElement.querySelectorAll('video');
+    
+    videos.forEach((video: HTMLVideoElement) => {
+      // Only load video when it comes into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.load(); // This will start loading the video
+            observer.unobserve(video);
+          }
+        });
+      }, { 
+        threshold: 0.1,
+        rootMargin: '50px' // Start loading 50px before it comes into view
+      });
+
+      observer.observe(video);
+    });
   }
 
   private initializeServices() {
@@ -77,6 +103,12 @@ export class CardServicoComponent implements OnInit {
     console.log(`Video loaded successfully for ${service.title}`);
     const videoElement = event.target as HTMLVideoElement;
     videoElement.setAttribute('data-loaded', 'true');
+  }
+
+  // Handle video can play (optimized loading)
+  onVideoCanPlay(event: any) {
+    const videoElement = event.target as HTMLVideoElement;
+    videoElement.style.opacity = '1'; // Fade in when ready
   }
 
   // Get the best video source for current browser

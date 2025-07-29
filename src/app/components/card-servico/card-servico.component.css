@@ -30,6 +30,14 @@ video, .bg_video {
   will-change: transform;
   backface-visibility: hidden;
   border-radius: 5px;
+  /* Smooth loading transition */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Video loaded state */
+video[data-loaded="true"] {
+  opacity: 1;
 }
 
 /* Fallback image styling (same as video) */
