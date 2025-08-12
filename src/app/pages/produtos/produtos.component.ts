@@ -51,9 +51,23 @@ export class ProdutosComponent {
       description: ''
     },
     {
-      key: 'tubos',
-      label: 'Tubos',
-      csvFilePath: '/assets/csv/tubos.csv',
+      key: 'tubos industriais',
+      label: 'Tubos Industriais',
+      csvFilePath: '/assets/csv/tubosindustriais.csv',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
+      description: ''
+    },
+    {
+      key: 'tubos schedule',
+      label: 'Tubos Schedule',
+      csvFilePath: '/assets/csv/tubosschedule.csv',
+      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
+      description: ''
+    },
+    {
+      key: 'Tubos DIN',
+      label: 'Tubos DIN',
+      csvFilePath: '/assets/csv/tubosdin.csv',
       imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
       description: ''
     },
