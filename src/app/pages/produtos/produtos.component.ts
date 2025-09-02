@@ -79,12 +79,26 @@ export class ProdutosComponent {
       description: ''
     },
     {
+      key: 'cromo_niquel',
+      label: 'Cromo Níquel',
+      csvFilePath: '/assets/csv/cromoniquel.csv',
+      imgSrc: '',
+      description: ''
+    },
+    {
+      key: 'ferros_mecanicos',
+      label: 'Ferros Mecânicos',
+      csvFilePath: '/assets/csv/ferrosmecanicos.csv',
+      imgSrc: '',
+      description: ''
+    },
+    {
       key: 'ferros_chatos',
       label: 'Ferros Chatos',
       csvFilePath: '/assets/csv/barra_chata.csv',
       imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/fc.webp?alt=media&token=c9a34085-667d-4259-9d88-d85ff0d12b7f',
       description: ''
-    }
+    },
   ];
 
   selectedProductType = this.productTypes[this.productTypes.length - 1]; // Default: Ferros Chatos
