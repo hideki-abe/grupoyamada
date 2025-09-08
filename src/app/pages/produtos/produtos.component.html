@@ -9,8 +9,8 @@
     <div class="image-description-container" *ngIf="selectedProductType.imgSrc">
       <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
       <div class="table-description" *ngIf="selectedProductType.description">
-        <div *ngFor="let line of getFormattedDescription()" class="description-line">
-          <strong>{{ line.type }}</strong>: {{ line.text }}
+        <div class="description-line">
+          {{ selectedProductType.description }}
         </div>
       </div>
     </div>

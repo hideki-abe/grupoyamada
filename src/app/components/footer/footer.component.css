@@ -37,10 +37,19 @@ footer {
   justify-content: center;
 }
 
+.location {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+
 #location_map {
-  padding-top: 20px;
-  width: 1383px;
+  width: 100%;
+  max-width: calc(100vw - 40px);
   height: 40vh;
+  min-height: 200px;
 }
 
 .contato, .logo, .links {
@@ -97,13 +106,19 @@ a:visited {
 
 @media (min-width: 800px) and (max-width: 1100px) {
   .line {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
   }
   .text {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
+  }
+  .location {
+    padding: 15px;
   }
   #location_map {
-    width: 800px;
+    width: 100%;
+    max-width: calc(100vw - 30px);
   }
   .contato, .logo, .links {
     width: 266px;
@@ -154,11 +169,14 @@ a:visited {
     width: 90vw;
     margin-bottom: 20px;
   }
+  .location {
+    padding: 10px;
+  }
   #location_map {
-    width: 90vw;
-    min-width: 220px;
+    width: 100%;
+    max-width: calc(100vw - 20px);
+    min-width: 280px;
     height: 200px;
-    padding-top: 10px;
   }
 }
 
@@ -175,9 +193,12 @@ a:visited {
     width: 98vw;
     margin-bottom: 10px;
   }
+  .location {
+    padding: 5px;
+  }
   #location_map {
-    width: 98vw;
+    width: 100%;
+    max-width: calc(100vw - 10px);
     height: 120px;
-    padding-top: 5px;
   }
 }

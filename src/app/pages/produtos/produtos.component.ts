@@ -26,57 +26,64 @@ export class ProdutosComponent {
       key: 'cantoneiras',
       label: 'Cantoneiras',
       csvFilePath: '/assets/csv/cantoneiras.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/cantoneiras.webp?alt=media&token=86eaa450-ec4c-453a-a5d6-38fbc1c551be',
+      imgSrc: '/assets/fotos/webp/cantoneiras-produto.webp',
       description: ''  
     },
     {
       key: 'vigas',
       label: 'Vigas',
       csvFilePath: '/assets/csv/vigas.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/vigas.webp?alt=media&token=bb03c63a-ad18-4b03-8561-3b58d72c3e06',
+      imgSrc: '/assets/fotos/webp/vigas-produto.webp',
       description: ''
     },
     {
       key: 'trefilados',
       label: 'Trefilados',
       csvFilePath: '/assets/csv/trefilados.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/trefilados.webp?alt=media&token=d6626f09-0cef-4077-a919-51128e997829',
+      imgSrc: '/assets/fotos/webp/trefilados-produto.webp',
       description: ''
     },
     {
       key: 'chapas',
       label: 'Chapas',
       csvFilePath: '/assets/csv/chapas.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/chapas.webp?alt=media&token=4ce04a2f-b410-42d7-b848-7686bee5e46d',
+      imgSrc: '/assets/fotos/webp/chapas-produto.webp',
       description: ''
     },
     {
       key: 'tubos industriais',
       label: 'Tubos Industriais',
       csvFilePath: '/assets/csv/tubosindustriais.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
+      imgSrc: '/assets/fotos/webp/tubos-produto.webp',
       description: ''
     },
     {
       key: 'tubos schedule',
       label: 'Tubos Schedule',
       csvFilePath: '/assets/csv/tubosschedule.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
+      imgSrc: '/assets/fotos/webp/tubos-produto.webp',
       description: ''
     },
     {
       key: 'Tubos DIN',
       label: 'Tubos DIN',
       csvFilePath: '/assets/csv/tubosdin.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/tubos.webp?alt=media&token=4342563a-1d52-4d78-a3c0-ba42b25d305a',
+      imgSrc: '/assets/fotos/webp/tubos-produto.webp',
       description: ''
     },
     {
       key: 'ferros_fundidos',
       label: 'Ferros Fundidos',
       csvFilePath: '/assets/csv/ferrosfundidos.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/fundidos.webp?alt=media&token=5eb82ae2-39f8-410a-b5d0-b920066fa20f',
+      imgSrc: '',
       description: ''
+    },
+    {
+      key: 'buchas',
+      label: 'Buchas',
+      csvFilePath: '/assets/csv/buchas.csv',
+      imgSrc: '',
+      description: 'As medidas internas e externas podem variar em alguns milímetros, confira a disponibilidade do material com os nossos vendedores!'
     },
     {
       key: 'cromo_niquel',
@@ -96,7 +103,7 @@ export class ProdutosComponent {
       key: 'ferros_chatos',
       label: 'Ferros Chatos',
       csvFilePath: '/assets/csv/barra_chata.csv',
-      imgSrc: 'https://firebasestorage.googleapis.com/v0/b/yamada-fotos.appspot.com/o/fc.webp?alt=media&token=c9a34085-667d-4259-9d88-d85ff0d12b7f',
+      imgSrc: '/assets/fotos/webp/chatos-produtos.webp',
       description: ''
     }
   ];
@@ -167,8 +174,6 @@ export class ProdutosComponent {
     if (!this.selectedProductType.description) {
       return [];
     }
-    
-    // Split by periods or common patterns like "AR350:", "MR250:", etc.
     const parts = this.selectedProductType.description.split(/(?=[A-Z]{2,}\d+:)/);
     
     return parts

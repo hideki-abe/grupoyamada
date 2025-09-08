@@ -5,30 +5,29 @@
   @for (service of services; track service.title) {
     <div class="card">
       <div class="video">
-        <video 
-          class="bg_video"
-          [muted]="true" 
-          loop 
-          autoplay 
-          playsinline
-          preload="none"
-          [poster]="service.poster"
-          (error)="onVideoError($event, service)"
-          (loadeddata)="onVideoLoaded($event, service)"
-          (canplay)="onVideoCanPlay($event)">
-          
-          <source [src]="service.videos.mp4" type="video/mp4">
-          
-          <!-- Fallback for browsers that don't support video -->
-          @if (service.poster) {
-            <img [src]="service.poster" [alt]="service.title" class="bg_video">
-          }
-        </video>
-        
-        <div class="text">
-          <h2 class="title"><b>{{ service.title }}</b></h2>
-          <p class="description">{{ service.description }}</p>
+        <div class="video-loading-placeholder" [attr.id]="'placeholder-' + service.id">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Carregando {{ service.title }}...</div>
         </div>
+        <video class="bg_video" 
+               autoplay 
+               loop 
+               muted 
+               playsinline
+               preload="none"
+               [poster]="service.poster"
+               [attr.data-src]="getBestVideoSource(service)"
+               [attr.data-service-id]="service.id"
+               (canplay)="onVideoCanPlay($event)"
+               (loadeddata)="onVideoLoaded($event, service)"
+               (error)="onVideoError($event, service)">
+        </video>
+      </div>
+      <div class="text">
+        <a (click)="navigateToServices()">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </a>
       </div>
     </div>
   }
