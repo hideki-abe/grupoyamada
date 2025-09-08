@@ -62,3 +62,29 @@ h3 {
 h4 {
   font-size: 8px;
 }
+
+body {
+  background: #FAFAFA;
+}
+
+/* Fix for sticky navbar - ensure proper scroll context */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}

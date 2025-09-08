@@ -7,10 +7,6 @@
   color: white;
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
 nav {
   background: #68B04D;
   width: 100%;
@@ -19,7 +15,6 @@ nav {
   justify-content: space-between;
   position: static;
   z-index: 9;
-  margin-top: -7px;
   font-size: 16px;
 }
 
@@ -128,7 +123,21 @@ a:hover {
   }
   nav {
     height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
   }
+  
+  nav.hide-navbar {
+    transform: translateY(-100%);
+  }
+  .navbar-superior {
+    height: 80px;
+  }
+
   .logo {
     padding: 0;
     left: 40%;

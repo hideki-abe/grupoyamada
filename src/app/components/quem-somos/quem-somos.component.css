@@ -11,7 +11,8 @@
 
 .content {
   display: inline-flex;
-  width: 1176px;
+  width: 100%;
+  max-width: 1176px;
   height: 546px;
   text-align: center;
   align-content: center;
@@ -19,7 +20,8 @@
 }
 
 .imagem {
-  width: 750px;
+  width: 100%;
+  max-width: 750px;
   height: 546px;
 }
 
@@ -54,7 +56,7 @@ h2 {
 @media (max-width: 1200px) {
   
   .container{
-    width: 100vw;
+    width: 100%;
     height: min-content;
   }
   .content {

@@ -22,6 +22,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
   transition = '';
   innerWidth = window.innerWidth;
   private routerSubscription: Subscription = new Subscription();
+  private lastScrollY = 0;
+  isNavbarHidden = false;
 
   constructor(private router: Router) {
   }
@@ -50,6 +52,23 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if(this.innerWidth < 800){
       this.transition = 'transition: 0.5s ease';
       console.log("transition change");
+    }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    if (this.innerWidth < 800) {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+        // Scrolling down and passed 100px - hide navbar
+        this.isNavbarHidden = true;
+      } else if (currentScrollY < this.lastScrollY) {
+        // Scrolling up - show navbar
+        this.isNavbarHidden = false;
+      }
+      
+      this.lastScrollY = currentScrollY;
     }
   }
 

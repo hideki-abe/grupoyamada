@@ -3,44 +3,20 @@ body {
   height: 2400px;
 }
 .container {
-  margin: auto;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .content {
+  width: 100%;
   text-align: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-}
-
-@media (max-width: 1200px) {
-  body {
-    height: 2200px;
-    width: 100vw;
-  }
-
-  .container {
-    width: 100vw;
-  }
-
-  .content {
-    width: 100vw;
-  }
-
 }
 
 @media (max-width: 700px) {
-  body {
-    height: 2200px;
-    width: 100vw;
-  }
-
   .container {
-    width: 100vw;
-  }
-
-  .content {
-    width: 100vw;
+    padding: 0 10px;
   }
 }
