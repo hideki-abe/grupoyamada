@@ -5,10 +5,6 @@
   @for (service of services; track service.title) {
     <div class="card">
       <div class="video">
-        <div class="video-loading-placeholder" [attr.id]="'placeholder-' + service.id">
-          <div class="loading-spinner"></div>
-          <div class="loading-text">Carregando {{ service.title }}...</div>
-        </div>
         <video class="bg_video" 
                autoplay 
                loop 
@@ -17,7 +13,6 @@
                preload="none"
                [poster]="service.poster"
                [attr.data-src]="getBestVideoSource(service)"
-               [attr.data-service-id]="service.id"
                (canplay)="onVideoCanPlay($event)"
                (loadeddata)="onVideoLoaded($event, service)"
                (error)="onVideoError($event, service)">

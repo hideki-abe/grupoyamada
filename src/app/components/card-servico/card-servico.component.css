@@ -63,6 +63,7 @@ h2 {
 }
 
 video, .bg_video {
+  display: flex;
   width: 100%;
   height: 480px;
   object-fit: cover;
@@ -194,12 +195,15 @@ video:not([data-loaded="true"]) {
 }
 
 .text {
-  width: 360px;
+  display: flex;
+  width: calc(100% - 6px);
+  max-width: 356px;
   height: 120px;
   background-image: linear-gradient(180deg, transparent, black);
   color: #ffffff;
   padding-top: 10px;
-  margin-top: -133px;
+  margin-top: -124px;
+  margin-left: 3px;
   justify-content: center;
   text-align: center;
   z-index: 10;
@@ -207,6 +211,7 @@ video:not([data-loaded="true"]) {
   line-height: 1.5em;
   transition: background .3s;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 
@@ -312,9 +317,11 @@ a:visited {
   }
 
   .text {
-    width:250px;
-    height: 110px;
-    margin-top: -115px;
+    width: calc(100% - 4px);
+    max-width: 246px;
+    height: 140px;
+    margin-top: -140px;
+    margin-left: 2px;
   }
 }
 
@@ -362,12 +369,13 @@ a:visited {
   }
 
   .text {
-    width: 100%;
-    max-width: 350px;
+    width: calc(100% - 4px);
+    max-width: 296px;
     height: 120px;
     margin-top: -123px;
-    padding: 15px; /* Increase padding */
-    box-sizing: border-box; /* Include padding in width/height */
+    margin-left: 2px;
+    padding: 15px;
+    box-sizing: border-box;
     border-radius: 5px;
   }
 
