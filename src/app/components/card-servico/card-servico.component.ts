@@ -38,7 +38,7 @@ export class CardServicoComponent implements OnInit, OnDestroy {
     {
       id: 'dobra',
       title: 'Dobras',
-      description: 'Dobras nas chapas de até #1/2\' (meia polegada), ou 12,7 milímetros em todos os tipos de materiais.'
+      description: 'Dobras nas chapas de até #1/2\' (meia polegada), ou 12,7 milímetros em aço, alumínio e inox.'
     },
     {
       id: 'serra',

@@ -1,27 +1,39 @@
-import { Component } from '@angular/core';
-import {ProdutoComponent} from "../../components/produto/produto.component";
-import {Produto} from "../../interfaces/produto";
-import {NgForOf, NgIf, NgClass} from "@angular/common";
-import {Papa} from "ngx-papaparse";
-import {Router} from "@angular/router";
+import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Papa } from "ngx-papaparse";
+import { Router } from "@angular/router";
+
+interface ProductType {
+  key: string;
+  label: string;
+  csvFilePath: string;
+  imgSrc: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [
-    ProdutoComponent,
-    NgForOf,
-    NgIf,
-    NgClass
-  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, FormsModule],
   templateUrl: './produtos.component.html',
   styleUrl: './produtos.component.css'
 })
 export class ProdutosComponent {
-  csvData: any[] = [];
-  headerRow: any[] = [];
+  csvData = signal<any[]>([]);
+  headerRow = signal<string[]>([]);
+  searchTerm = signal<string>('');
+  isLoading = signal<boolean>(false);
 
-  productTypes = [
+  readonly productTypes: ReadonlyArray<ProductType> = [
+    {
+      key: 'ferros_chatos',
+      label: 'Ferros Chatos',
+      csvFilePath: '/assets/csv/barra_chata.csv',
+      imgSrc: '/assets/fotos/webp/chatos-produtos.webp',
+      description: ''
+    },
     {
       key: 'cantoneiras',
       label: 'Cantoneiras',
@@ -51,21 +63,21 @@ export class ProdutosComponent {
       description: ''
     },
     {
-      key: 'tubos industriais',
+      key: 'tubos_industriais',
       label: 'Tubos Industriais',
       csvFilePath: '/assets/csv/tubosindustriais.csv',
       imgSrc: '/assets/fotos/webp/tubos-produto.webp',
       description: ''
     },
     {
-      key: 'tubos schedule',
+      key: 'tubos_schedule',
       label: 'Tubos Schedule',
       csvFilePath: '/assets/csv/tubosschedule.csv',
       imgSrc: '/assets/fotos/webp/tubos-produto.webp',
       description: ''
     },
     {
-      key: 'Tubos DIN',
+      key: 'tubos_din',
       label: 'Tubos DIN',
       csvFilePath: '/assets/csv/tubosdin.csv',
       imgSrc: '/assets/fotos/webp/tubos-produto.webp',
@@ -98,62 +110,48 @@ export class ProdutosComponent {
       csvFilePath: '/assets/csv/ferrosmecanicos.csv',
       imgSrc: '',
       description: ''
-    },
-    {
-      key: 'ferros_chatos',
-      label: 'Ferros Chatos',
-      csvFilePath: '/assets/csv/barra_chata.csv',
-      imgSrc: '/assets/fotos/webp/chatos-produtos.webp',
-      description: ''
     }
   ];
 
-  selectedProductType = this.productTypes[this.productTypes.length - 1]; // Default: Ferros Chatos
+  selectedProductType = signal<ProductType>(this.productTypes[0]);
 
-  onInit() {
-    console.log("Initializing component: ", this.csvData.at(0));
-  }
-
-  constructor(private papa: Papa, private router: Router) {
-    this.parseCsv(this.selectedProductType.csvFilePath);
-  }
-
-  selectProductType(item: any) {
-    if (item.key === this.selectedProductType.key) {
-      // Already selected, do nothing
-      return;
-    }
-    // Fade out current content
-    this.fadeOutTableAndImage(() => {
-      this.selectedProductType = item;
-      this.parseCsv(item.csvFilePath);
-      setTimeout(() => {
-        this.fadeInTableAndImage();
-      }, 350); // 350ms delay for transition
+  filteredData = computed(() => {
+    const data = this.csvData();
+    const term = this.searchTerm().toLowerCase().trim();
+    
+    if (!term) return data;
+    
+    return data.filter(row => {
+      return Object.values(row).some(value => 
+        String(value).toLowerCase().includes(term)
+      );
     });
+  });
+
+  constructor(
+    private readonly papa: Papa,
+    private readonly router: Router
+  ) {
+    this.parseCsv(this.selectedProductType().csvFilePath);
   }
 
-  fadeOutTableAndImage(callback: () => void) {
-    const tableRow = document.querySelector('.table-row');
-    if (tableRow) {
-      (tableRow as HTMLElement).style.opacity = '0';
-      setTimeout(callback, 350);
-    } else {
-      callback();
-    }
+  selectProductType(item: ProductType): void {
+    if (item.key === this.selectedProductType().key) return;
+    
+    this.isLoading.set(true);
+    this.searchTerm.set('');
+    
+    setTimeout(() => {
+      this.selectedProductType.set(item);
+      this.parseCsv(item.csvFilePath);
+    }, 300);
   }
 
-  fadeInTableAndImage() {
-    const tableRow = document.querySelector('.table-row');
-    if (tableRow) {
-      (tableRow as HTMLElement).style.opacity = '1';
-    }
-  }
-
-  parseCsv(path: string) {
-    this.csvData = [];
-    this.headerRow = [];
-    let options = {
+  parseCsv(path: string): void {
+    this.csvData.set([]);
+    this.headerRow.set([]);
+    
+    const options = {
       delimiter: ',',
       header: true,
       skipEmptyLines: true,
@@ -162,72 +160,53 @@ export class ProdutosComponent {
       transformHeader: (header: string) => {
         return header.replace(/^\uFEFF/, '').replace(/^"|"$/g, '').trim();
       },
-      complete: (results: any, file: any) => {
-        this.headerRow = results.meta.fields;
-        this.csvData = results.data;
+      complete: (results: any) => {
+        this.headerRow.set(results.meta.fields);
+        this.csvData.set(results.data);
+        this.isLoading.set(false);
+      },
+      error: (error: any) => {
+        console.error('Error parsing CSV:', error);
+        this.isLoading.set(false);
       }
     };
-    this.papa.parse(path, options);
-  }
-
-  getFormattedDescription() {
-    if (!this.selectedProductType.description) {
-      return [];
-    }
-    const parts = this.selectedProductType.description.split(/(?=[A-Z]{2,}\d+:)/);
     
-    return parts
-      .filter(part => part.trim().length > 0)
-      .map(part => {
-        const colonIndex = part.indexOf(':');
-        if (colonIndex > 0) {
-          return {
-            type: part.substring(0, colonIndex).trim(),
-            text: part.substring(colonIndex + 1).trim().replace(/\.$/, '')
-          };
-        }
-        return {
-          type: '',
-          text: part.trim().replace(/\.$/, '')
-        };
-      });
+    this.papa.parse(path, options);
   }
 
   getShapeSymbol(formato: string): string {
     if (!formato) return '';
-    
     const formatoLower = formato.toLowerCase();
     
-    if (formatoLower.includes('redondo')) {
-      return '●';
-    } else if (formatoLower.includes('quadrado')) {
-      return '■';
-    } else if (formatoLower.includes('sextavado')) {
-      return '⬢';
-    }
+    if (formatoLower.includes('redondo')) return '●';
+    if (formatoLower.includes('quadrado')) return '■';
+    if (formatoLower.includes('sextavado')) return '⬢';
     
-    return formato; // Return original text if no match
+    return formato;
   }
 
   getShapeClass(formato: string): string {
     if (!formato) return '';
-    
     const formatoLower = formato.toLowerCase();
     
-    if (formatoLower.includes('redondo')) {
-      return 'shape-circle';
-    } else if (formatoLower.includes('quadrado')) {
-      return 'shape-square';
-    } else if (formatoLower.includes('sextavado')) {
-      return 'shape-hexagon';
-    }
+    if (formatoLower.includes('redondo')) return 'shape-circle';
+    if (formatoLower.includes('quadrado')) return 'shape-square';
+    if (formatoLower.includes('sextavado')) return 'shape-hexagon';
     
     return '';
   }
 
-  scrollToContact() {
+  onSearchChange(value: string): void {
+    this.searchTerm.set(value);
+  }
+
+  clearSearch(): void {
+    this.searchTerm.set('');
+  }
+
+  scrollToContact(): void {
     this.router.navigate(['/sobre']).then(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 }

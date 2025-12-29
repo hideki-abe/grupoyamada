@@ -1,49 +1,138 @@
-<div class="content">
-  <ul class="list">
-    <li *ngFor="let item of productTypes" (click)="selectProductType(item)" [class.selected]="item.key === selectedProductType.key">
-      {{ item.label }}
-    </li>
-  </ul>
-  <h2 class="title">{{ selectedProductType.label }}</h2>
-  <div class="table-row">
-    <div class="image-description-container" *ngIf="selectedProductType.imgSrc">
-      <img class="table-img" [src]="selectedProductType.imgSrc" [alt]="selectedProductType.label" />
-      <div class="table-description" *ngIf="selectedProductType.description">
-        <div class="description-line">
-          {{ selectedProductType.description }}
-        </div>
+<div class="products-page">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="page-title">
+        NOSSOS <b>PRODUTOS</b>
+      </h1>
+      <p class="page-subtitle">
+        Descubra nossa linha completa de produtos siderúrgicos de alta qualidade
+      </p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="categories-section">
+      <h2 class="section-title">Categorias</h2>
+      <div class="categories-grid">
+        @for (item of productTypes; track item.key) {
+          <button 
+            class="category-card"
+            [class.selected]="item.key === selectedProductType().key"
+            (click)="selectProductType(item)"
+            [attr.aria-label]="'Selecionar categoria ' + item.label">
+            {{ item.label }}
+          </button>
+        }
       </div>
     </div>
-    <div class="table">
-      <table id="customers" *ngIf="headerRow.length && csvData.length">
-        <thead>
-          <tr>
-            <th *ngFor="let col of headerRow">{{ col }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of csvData">
-            <td *ngFor="let col of headerRow" [attr.data-label]="col">
-              <span *ngIf="col === 'Formato' && selectedProductType.key === 'trefilados'" 
-                    class="shape-symbol" 
-                    [ngClass]="getShapeClass(row[col])">
-                {{ getShapeSymbol(row[col]) }}
-              </span>
-              <span *ngIf="col !== 'Formato' || selectedProductType.key !== 'trefilados'">
-                {{ row[col] }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div *ngIf="!csvData.length">
-          <div class="contact-section">
-            <h2>Consulte um vendedor</h2>
-            <p>Entre em contato conosco para mais informações sobre esse produto</p>
-            <button class="contact-btn" (click)="scrollToContact()">QUERO SABER MAIS SOBRE ESSE PRODUTO</button>
-          </div>
+
+    <div class="content-section">
+      <div class="search-bar">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input 
+            type="text"
+            class="search-input"
+            placeholder="Pesquisar produto..."
+            [value]="searchTerm()"
+            (input)="onSearchChange($any($event.target).value)"
+            aria-label="Campo de pesquisa de produtos">
+          @if (searchTerm()) {
+            <button 
+              class="clear-btn"
+              (click)="clearSearch()"
+              aria-label="Limpar pesquisa">
+              ✕
+            </button>
+          }
+        </div>
+        @if (searchTerm()) {
+          <p class="search-results">
+            {{ filteredData().length }} resultado(s) encontrado(s)
+          </p>
+        }
       </div>
+
+      <div class="product-header">
+        <h2 class="product-title">{{ selectedProductType().label }}</h2>
+        @if (selectedProductType().description) {
+          <p class="product-description">{{ selectedProductType().description }}</p>
+        }
+      </div>
+
+      @if (isLoading()) {
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Carregando produtos...</p>
+        </div>
+      } @else {
+        <div class="table-container" [class.fade-in]="!isLoading()">
+          @if (selectedProductType().imgSrc) {
+            <div class="product-image-wrapper">
+              <img 
+                [src]="selectedProductType().imgSrc" 
+                [alt]="selectedProductType().label"
+                class="product-image"
+                loading="lazy">
+            </div>
+          }
+
+          @if (filteredData().length > 0 && headerRow().length > 0) {
+            <div class="table-wrapper">
+              <table class="products-table">
+                <thead>
+                  <tr>
+                    @for (col of headerRow(); track col) {
+                      <th>{{ col }}</th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of filteredData(); track $index) {
+                    <tr>
+                      @for (col of headerRow(); track col) {
+                        <td [attr.data-label]="col">
+                          @if (col === 'Formato' && selectedProductType().key === 'trefilados') {
+                            <span 
+                              class="shape-symbol">
+                              {{ row[col]}}
+                            </span>
+                          } @else {
+                            {{ row[col] }}
+                          }
+                        </td>
+                      }
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          } @else if (searchTerm() && filteredData().length === 0) {
+            <div class="empty-state">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+              <h3>Nenhum produto encontrado</h3>
+              <p>Tente ajustar sua pesquisa</p>
+              <button class="btn-secondary" (click)="clearSearch()">
+                Limpar Pesquisa
+              </button>
+            </div>
+          } @else if (!csvData().length) {
+            <div class="contact-card">
+              <h3>Consulte um vendedor</h3>
+              <p>Entre em contato conosco para mais informações sobre esse produto</p>
+              <button class="btn-primary" (click)="scrollToContact()">
+                Solicitar Informações
+              </button>
+            </div>
+          }
+        </div>
+      }
     </div>
   </div>
 </div>
-
