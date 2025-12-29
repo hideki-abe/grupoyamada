@@ -1,31 +1,97 @@
-<div class="title1">
-  <h2>CONHEÇA <b>NOSSOS SERVIÇOS</b></h2>
-</div>
-<div class="container">
-  @for (service of services; track service.title) {
-    <div class="card">
-      <div class="video">
-        <video class="bg_video" 
-               autoplay 
-               loop 
-               muted 
-               playsinline
-               preload="none"
-               [poster]="service.poster"
-               [attr.data-src]="getBestVideoSource(service)"
-               (canplay)="onVideoCanPlay($event)"
-               (loadeddata)="onVideoLoaded($event, service)"
-               (error)="onVideoError($event, service)">
-        </video>
-      </div>
-      <div class="text">
-        <a (click)="navigateToServices()">
-          <h3>{{ service.title }}</h3>
-          <p>{{ service.description }}</p>
-        </a>
-      </div>
+<section class="services-section" aria-labelledby="services-title">
+  <div class="title1">
+    <h2 id="services-title">
+      CONHEÇA <b>NOSSOS SERVIÇOS</b>
+    </h2>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading-container" role="status" aria-live="polite">
+      <p>Carregando serviços...</p>
     </div>
   }
-</div>
-<button class="btn" (click)="navigateToServices()">VER TODOS OS SERVIÇOS</button>
 
+  @if (error()) {
+    <div class="error-container" role="alert" aria-live="assertive">
+      <p>{{ error() }}</p>
+    </div>
+  }
+
+  @if (!isLoading() && !error()) {
+    <div class="container" role="list">
+      @for (service of services(); track trackByServiceId($index, service)) {
+        <article 
+          class="card" 
+          role="listitem"
+          [attr.aria-labelledby]="'service-title-' + service.id"
+          [attr.aria-describedby]="'service-desc-' + service.id">
+          
+          <div class="image-wrapper">
+            <img 
+              class="service-image" 
+              [src]="service.poster" 
+              [alt]="'Imagem representativa do serviço: ' + service.title"
+              loading="lazy"
+              width="320"
+              height="420"
+              [attr.fetchpriority]="$index === 0 ? 'high' : 'auto'">
+          </div>
+          
+          <div class="text">
+            <a 
+              [attr.href]="'/servicos'"
+              (click)="onCardClick($event)"
+              (keydown)="onCardKeydown($event)"
+              [attr.aria-label]="'Ver detalhes sobre ' + service.title"
+              tabindex="0">
+              
+              <h3 [id]="'service-title-' + service.id">
+                {{ service.title }}
+              </h3>
+              
+              <p [id]="'service-desc-' + service.id">
+                {{ service.description }}
+              </p>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+
+    <button 
+      class="btn"
+      type="button"
+      (click)="navigateToServices()"
+      aria-label="Ver todos os serviços disponíveis">
+      VER TODOS OS SERVIÇOS
+      <span aria-hidden="true">→</span>
+    </button>
+  }
+</section>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .loading-container,
+  .error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    font-size: 1.2rem;
+  }
+
+  .error-container {
+    color: #d32f2f;
+  }
+</style>
