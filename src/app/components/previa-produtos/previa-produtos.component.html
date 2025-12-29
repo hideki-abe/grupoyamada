@@ -1,25 +1,47 @@
-<div class="content">
-  <div class="title">
-    <h2>PRODUTOS <b>EM DESTAQUE</b></h2>
+<section class="products-section" aria-labelledby="products-title">
+  <div class="title1">
+    <h2 id="products-title">
+      PRODUTOS <b>EM DESTAQUE</b>
+    </h2>
   </div>
-  <!-- Desktop: show all -->
-  <div class="box" *ngIf="!isMobile">
-    <div class="img" *ngFor="let produto of produtos">
-      <img [src]="produto.img" alt="Card Image">
-      <p>{{produto.nome}}</p>
-      <button class="btn" (click)="onContatoClick()">FAZER ORÇAMENTO</button>
-    </div>
-  </div>
-  <!-- Mobile: carousel -->
-  <div class="carousel-previa" *ngIf="isMobile">
-    <div class="img">
-      <img [src]="produtos[currentIndex].img" alt="Card Image">
-      <p>{{produtos[currentIndex].nome}}</p>
-      <button class="btn" (click)="onContatoClick()">FAZER ORÇAMENTO</button>
-    </div>
-  </div>
-</div>
-<div class="mais">
-  <button class="btn2" (click)="onContatoClick()">Ver mais produtos</button>
-</div>
 
+  <div class="container" role="list">
+    @for (produto of produtos; track produto.nome) {
+      <article 
+        class="card" 
+        role="listitem"
+        [attr.aria-label]="produto.nome">
+        
+        <div class="image-wrapper">
+          <img 
+            class="product-image" 
+            [src]="produto.img" 
+            [alt]="produto.nome"
+            loading="lazy"
+            width="320"
+            height="420">
+        </div>
+        
+        <div class="content">
+          <h3 class="product-name">{{ produto.nome }}</h3>
+          <button 
+            class="btn-primary"
+            type="button"
+            (click)="onContatoClick()"
+            [attr.aria-label]="'Solicitar orçamento de ' + produto.nome">
+            Solicitar Orçamento
+          </button>
+        </div>
+      </article>
+    }
+  </div>
+
+  <button 
+    class="btn"
+    type="button"
+    (click)="onVerMaisClick()"
+    aria-label="Ver catálogo completo de produtos">
+    VER TODOS OS PRODUTOS
+    <span aria-hidden="true">→</span>
+  </button>
+</section>
