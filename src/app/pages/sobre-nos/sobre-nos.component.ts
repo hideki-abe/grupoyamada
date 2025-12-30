@@ -27,7 +27,7 @@ export class SobreNosComponent {
     { name: 'Karla', 
       phone: '(62) 9 9935-5551', 
       email: 'vendas4.grupoyamada@gmail.com', 
-      whatsapp: 'https://api.whatsapp.com/send?phone=556299668194&' 
+      whatsapp: 'https://api.whatsapp.com/send?phone=556299355551&' 
     },
     { name: 'Rafael', 
       phone: '(62) 9 9666-8194', 
