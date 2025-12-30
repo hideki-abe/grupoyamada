@@ -48,7 +48,7 @@ export class ServicosComponent {
       ],
       specifications: [
         'Até 12,7mm de espessura',
-        'Comprimento até 3000mm'
+        'Comprimento de até 3000mm em chapas mais finas'
       ]
     },
     {
@@ -74,7 +74,7 @@ export class ServicosComponent {
       icon: 'fas fa-desktop',
       imageUrl: '/assets/fotos/webp/chapa-servico.webp',
       features: [
-        'Softwares de modelagem avançados',
+        'Softwares de modelagem avançados 2D e 3D',
         'Atendimento especializado',
         'Controle de qualidade',
         'Rapidez na entrega'
